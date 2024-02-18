@@ -28,6 +28,7 @@ body {
   margin: 0;
   height: 100vh;
   color: #333;
+  background-color: #badc58;
 }
 /* ########## Health Food ########## */
 .health_food {
@@ -45,6 +46,7 @@ body {
   height: 200px;
   margin: 0 30px;
   background-color: #fff;
+  background-color: #badc58;
 }
 .item:hover {
   box-shadow: none;
@@ -59,7 +61,7 @@ body {
 }
 .front {
   z-index: 1;
-  background-color: #f5f5f5;
+  background-color: #eeffe3;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 .item:hover .front {
@@ -70,12 +72,15 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
+}
+.item:hover .front img {
+  animation: imageScale 1s linear infinite;
 }
 .front h2 {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -94,7 +99,7 @@ body {
 .back a {
   display: inline-block;
   margin-top: 5px;
-  background-color: yellowgreen;
+  background-color: #6ab04c;
   color: #fff;
   padding: 5px 10px;
   border-radius: 20px;
@@ -102,4 +107,16 @@ body {
 }
 .back a:hover {
   background-color: seagreen;
+}
+/* hover Animation */
+@keyframes imageScale {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

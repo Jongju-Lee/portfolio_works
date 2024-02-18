@@ -1,0 +1,39 @@
+/* Google Web Fonts CDN */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap");
+/* Noonnu Korean Fonts */
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Noto Sans KR", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2em;
+}
+body {
+  font-size: 15px;
+  line-height: 1.5em;
+  margin: 0;
+  height: 100vh;
+  color: #333;
+}
