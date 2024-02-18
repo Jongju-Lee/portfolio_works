@@ -1,3 +1,5 @@
+/* Fontawesome 4.7 */
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 /* Google Web Fonts CDN */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap");
 /* Noonnu Korean Fonts */
@@ -36,4 +38,115 @@ body {
   margin: 0;
   height: 100vh;
   color: #333;
+}
+/* ########## Smart Outlet ########## */
+section {
+  padding-top: 50px;
+}
+.inner {
+  width: 1200px;
+  margin: auto;
+}
+.inner h1,
+.inner h1 :is(b, em) {
+  font-family: "GmarketSansLight";
+  font-size: 50px;
+  letter-spacing: 3px;
+}
+.inner h1 {
+  text-align: center;
+  font-weight: 300;
+}
+.inner h1 b {
+}
+.inner h1 em {
+  font-style: normal;
+  color: crimson;
+}
+.items_outer {
+  margin-top: 20px;
+}
+.items_outer > b {
+  font-size: 20px;
+}
+.items {
+  counter-reset: count 0;
+  margin-top: 10px;
+}
+.item {
+  width: calc(1120px / 5);
+  float: left;
+}
+.item:not(:last-child) {
+  margin-right: 20px;
+}
+.item .thum {
+  position: relative;
+  width: inherit;
+  height: 340px;
+  overflow: hidden;
+}
+.item .thum::after {
+  counter-increment: count;
+  content: counter(count);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 27px;
+  border-radius: 0 0 10px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+}
+.item .thum a {
+  width: inherit;
+  height: inherit;
+}
+.item .thum a img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  transition: 0.35s;
+}
+.item:hover .thum a img {
+  transform: scale(1.05);
+}
+.item .desc {
+  position: relative;
+  margin-top: 5px;
+}
+.item .desc::after {
+  content: "\f08a";
+  font-family: "fontawesome";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #bbb;
+  cursor: pointer;
+  transition: 0.35s;
+}
+.item.active .desc::after {
+  content: "\f004";
+  color: crimson;
+}
+.item .desc span {
+  display: block;
+}
+.item .desc span b {
+  color: crimson;
+  margin-right: 3px;
+}
+.item .desc span s {
+  color: #bbb;
+  margin-right: 3px;
+}
+.item .desc em {
+  font-style: normal;
+  color: #bbb;
+}
+.item .desc em::before {
+  content: attr(data-count);
+  margin-right: 5px;
 }
