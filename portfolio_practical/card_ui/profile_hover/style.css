@@ -77,7 +77,7 @@ section {
   transition: 0.5s;
 }
 .item:nth-of-type(1) .desc {
-  background: linear-gradient(0deg, #badc58, transparent);
+  background: linear-gradient(0deg, #6ab04c, transparent);
 }
 .item:nth-of-type(2) .desc {
   background: linear-gradient(0deg, crimson, transparent);
