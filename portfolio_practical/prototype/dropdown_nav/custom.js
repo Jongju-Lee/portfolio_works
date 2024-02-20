@@ -10,4 +10,9 @@ $(function () {
   $(".gnb li").mouseleave(function () {
     $(this).children(".drop_menu").stop().fadeOut();
   });
+  /* ##### GNB - Trigger ##### */
+  $(".trigger").click(function () {
+    $(".trigger_inner").toggleClass("active");
+    $(".sitemap").stop().fadeToggle();
+  });
 });
