@@ -42,7 +42,7 @@ body {
 .item {
   position: relative;
   flex: 1;
-  transition: 0.75s;
+  transition: 0.5s;
   overflow: hidden;
 }
 .item:hover {
@@ -83,7 +83,7 @@ body {
 }
 .item:hover .desc {
   bottom: 0px;
-  transition-delay: 0.75s;
+  transition-delay: 0.5s;
 }
 .desc h2 {
   border-bottom: 1px solid #333;
