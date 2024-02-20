@@ -29,6 +29,7 @@ body {
   height: 100vh;
   color: #333;
   background-color: #badc58;
+  background-image: linear-gradient(120deg, #8ddc58 0%, #badc58 100%);
 }
 /* ########## Health Food ########## */
 .health_food {
@@ -45,7 +46,6 @@ body {
   width: 300px;
   height: 200px;
   margin: 0 30px;
-  background-color: #fff;
   background-color: #badc58;
 }
 .item:hover {
