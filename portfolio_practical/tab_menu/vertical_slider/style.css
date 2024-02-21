@@ -31,6 +31,7 @@ section h1 {
   position: absolute;
   top: 150px;
   left: 50%;
+  font-weight: 500;
   transform: translateX(-50%);
   text-align: center;
   font-size: 50px;
@@ -54,17 +55,22 @@ section h1::after {
   width: 50%;
   height: 400px;
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .vertical input {
   display: none;
+}
+.tabs_wrapper {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
 }
 .tabs {
   height: 300%;
   transition: 0.5s;
 }
 .tab {
-  height: 400px;
+  height: 380px;
   padding: 40px 50px;
 }
 .tab .user_face {
@@ -91,7 +97,7 @@ section h1::after {
 }
 .btn_tab {
   position: absolute;
-  bottom: 10px;
+  bottom: -10px;
   width: 100%;
 }
 .btn_tab label {
@@ -104,13 +110,13 @@ section h1::after {
   transition: 0.5s;
 }
 /* Vertical Slider Checked Function */
-input[id="tab1"]:checked ~ .tabs {
+input[id="tab1"]:checked ~ .tabs_wrapper .tabs {
   transform: translateY(0);
 }
-input[id="tab2"]:checked ~ .tabs {
+input[id="tab2"]:checked ~ .tabs_wrapper .tabs {
   transform: translateY(-33.333333%);
 }
-input[id="tab3"]:checked ~ .tabs {
+input[id="tab3"]:checked ~ .tabs_wrapper .tabs {
   transform: translateY(-66.666666%);
 }
 input[id="tab1"]:checked ~ .btn_tab label[for="tab1"],
