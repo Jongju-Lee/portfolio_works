@@ -1,42 +1,46 @@
 $(function () {
+  $(".sitemap").hide();
   /* ##### Header - Trigger ##### */
   $(".trigger").click(function () {
     $(this).toggleClass("active");
+    $(".sitemap").stop().fadeToggle();
+    $("header").removeClass("active");
+    $(".header_drop_down").stop().slideUp("fast");
   });
   /* ##### Header - GNB ##### */
   $(".gnb").mouseenter(function () {
     $(this).addClass("active");
-    $("header").addClass("active");
-    $(".header_drop_down").slideDown();
+    $(".header_drop_down").stop().slideDown("fast");
   });
   $(".gnb").mouseleave(function () {
     $(this).removeClass("active");
   });
   $("section").mouseenter(function () {
     $("header").removeClass("active");
+    $(".header_drop_down").stop().slideUp("fast");
   });
   // GNB - Product
-  $(".gnb_product, .product_drop_down").mouseenter(function () {
+  $(".gnb_product").mouseenter(function () {
+    $(this).parent().removeClass("smegazine product collection");
     $(this).parent().addClass("product");
     $("header").addClass("active");
-  });
-  $(".gnb_product, .product_drop_down").mouseleave(function () {
-    $(this).parent().removeClass("product");
+    $(".header_drop_down").removeClass("active");
+    $(".product_drop_down").addClass("active");
   });
   // GNB - Collection
-  $(".gnb_collection, .collection_drop_down").mouseenter(function () {
+  $(".gnb_collection").mouseenter(function () {
+    $(this).parent().removeClass("smegazine product collection");
     $(this).parent().addClass("collection");
     $("header").addClass("active");
-  });
-  $(".gnb_collection, .collection_drop_down").mouseleave(function () {
-    $(this).parent().removeClass("collection");
+    $(".header_drop_down").removeClass("active");
+    $(".collection_drop_down").addClass("active");
   });
   // GNB - SMEGazine
-  $(".gnb_smegazine, .smegazine_drop_down").mouseenter(function () {
+  $(".gnb_smegazine").mouseenter(function () {
+    $(this).parent().removeClass("smegazine product collection");
     $(this).parent().addClass("smegazine");
     $("header").addClass("active");
-  });
-  $(".gnb_smegazine, .smegazine_drop_down").mouseleave(function () {
-    $(this).parent().removeClass("smegazine");
+    $(".header_drop_down").removeClass("active");
+    $(".smegazine_drop_down").addClass("active");
   });
 });
