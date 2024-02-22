@@ -43,4 +43,23 @@ $(function () {
     $(".header_drop_down").removeClass("active");
     $(".smegazine_drop_down").addClass("active");
   });
+  /* ##### Window Scroll Event - btn_top ##### */
+  $(window).scroll(function () {
+    if (window.scrollY >= 50) {
+      // 스크롤을 조금이라도 내렸을때
+      $(".btn_top").addClass("active");
+    } else if (window.scrollY <= 50) {
+      // 스크롤을 아예 내리지 않았을때(최상단)
+      $(".btn_top").removeClass("active");
+    }
+  });
+  /* ##### WOW.js ##### */
+  wow = new WOW({
+    boxClass: "wow", // default
+    animateClass: "animated", // default
+    offset: 200,
+    mobile: true, // default
+    live: true, // default
+  });
+  wow.init();
 });

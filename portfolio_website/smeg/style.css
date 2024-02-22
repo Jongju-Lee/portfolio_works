@@ -5,6 +5,9 @@
 /* Google Web Fonts CDN */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap");
 /* Reset CSS */
+html {
+  scroll-behavior: smooth;
+}
 * {
   box-sizing: border-box;
   outline: none;
@@ -636,9 +639,19 @@ section.intro iframe {
   float: right;
   width: 50%;
   height: 830px;
+  animation: rightToLeft 2.5s ease;
 }
 :is(.coffee, .mixer, .wine_cooler) .detail .photo img {
   height: inherit;
+}
+/* Photo Reveal Animation */
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(800px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 /* ##### Radio Check Function ##### */
 input[id="coffee_white"]:checked ~ .btn_colorize label[for="coffee_white"],
@@ -805,10 +818,6 @@ footer {
 footer .menu {
   color: #e3e3e3;
 }
-footer .menu .logo {
-}
-footer .menu .logo img {
-}
 footer .menu .links {
   margin-top: 30px;
 }
@@ -839,10 +848,10 @@ footer .menu .links {
   color: #646464;
 }
 .smeg_info span {
+  font-size: 10px;
 }
 .inquiry {
   padding-left: 120px;
-  border: 1px solid white;
   color: #fff;
 }
 .repair {
@@ -856,18 +865,64 @@ footer .menu .links {
   display: inline-block;
   margin-top: 70px;
 }
-.safety img {
-}
 footer .sns {
+  margin-top: 20px;
 }
 footer .sns a {
+  position: relative;
+  display: inline-block;
+  background-color: #c8c8c8;
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 30px;
+  margin-right: 26px;
+  color: #333;
+  transition: 0.2s;
 }
-footer .sns a i {
+footer .sns a:hover {
+  background-color: #fff;
+}
+footer .sns a:nth-child(4) {
+  font-size: 30px;
 }
 /* ########## Button - To Top ########## */
 .btn_top {
+  position: fixed;
+  bottom: -30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #dfe6e9;
+  animation: upAndDown 1.2s linear infinite both;
+  opacity: 0;
+  transition: 0.5s;
+}
+.btn_top.active {
+  opacity: 1;
+  bottom: 30px;
 }
 .btn_top a {
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  font-size: 20px;
 }
-.btn_top a i {
+/* btn_top Animation */
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
