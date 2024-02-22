@@ -7,36 +7,36 @@ $(function () {
   $(".gnb").mouseenter(function () {
     $(this).addClass("active");
     $("header").addClass("active");
+    $(".header_drop_down").slideDown();
   });
   $(".gnb").mouseleave(function () {
     $(this).removeClass("active");
+  });
+  $("section").mouseenter(function () {
     $("header").removeClass("active");
   });
   // GNB - Product
   $(".gnb_product, .product_drop_down").mouseenter(function () {
     $(this).parent().addClass("product");
-    $(".product_drop_down").stop().fadeIn("fast");
+    $("header").addClass("active");
   });
   $(".gnb_product, .product_drop_down").mouseleave(function () {
     $(this).parent().removeClass("product");
-    $(".product_drop_down").stop().fadeOut("fast");
   });
   // GNB - Collection
   $(".gnb_collection, .collection_drop_down").mouseenter(function () {
     $(this).parent().addClass("collection");
-    $(".collection_drop_down").stop().fadeIn("fast");
+    $("header").addClass("active");
   });
   $(".gnb_collection, .collection_drop_down").mouseleave(function () {
     $(this).parent().removeClass("collection");
-    $(".collection_drop_down").stop().fadeOut("fast");
   });
   // GNB - SMEGazine
   $(".gnb_smegazine, .smegazine_drop_down").mouseenter(function () {
     $(this).parent().addClass("smegazine");
-    $(".smegazine_drop_down").stop().fadeIn("fast");
+    $("header").addClass("active");
   });
   $(".gnb_smegazine, .smegazine_drop_down").mouseleave(function () {
     $(this).parent().removeClass("smegazine");
-    $(".smegazine_drop_down").stop().fadeOut("fast");
   });
 });

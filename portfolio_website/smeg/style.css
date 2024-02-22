@@ -49,17 +49,20 @@ header {
   padding-top: 30px;
   color: #fff;
   transition: 0.5s;
+  z-index: 1000;
 }
 header.active {
   background-color: #fff;
   color: #333;
 }
 header .logo {
+  position: relative;
   display: block;
   margin: auto;
   text-align: center;
   width: 200px;
   margin-bottom: 20px;
+  z-index: 100;
 }
 header .logo img {
   width: 100%;
@@ -222,10 +225,24 @@ header.active .trigger span {
 /* ##### Hedaer - Header Dropdown ##### */
 .header_drop_down {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   width: 100%;
+  padding-top: 130px;
   background-color: #fff;
+  z-index: -1;
+  display: none;
+}
+.product_drop_down,
+.collection_drop_down,
+.smegazine_drop_down {
+  z-index: -3;
+  transition: 0.5s;
+}
+.product_drop_down.active,
+.collection_drop_down.active,
+.smegazine_drop_down.active {
+  z-index: -2;
 }
 .header_drop_down .inner {
   width: 1250px;
@@ -262,15 +279,6 @@ header.active .trigger span {
 }
 .header_drop_down .inner .photo img {
   width: 100%;
-}
-.product_drop_down {
-  display: none;
-}
-.collection_drop_down {
-  display: none;
-}
-.smegazine_drop_down {
-  display: none;
 }
 .smegazine_drop_down .inner {
   flex-direction: column;
