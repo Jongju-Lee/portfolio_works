@@ -78,9 +78,10 @@ $(function () {
   wow = new WOW({
     boxClass: "wow", // default
     animateClass: "animated", // default
-    offset: 200,
+    offset: 150,
     mobile: true, // default
     live: true, // default
+    // offset 기본값은 0, 숫자가 높을수록 애니메이션 늦게 반응
   });
   wow.init();
 });

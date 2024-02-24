@@ -771,6 +771,7 @@ section.benefit::after {
   z-index: 10;
   display: flex;
   align-items: center;
+  gap: 50px;
 }
 .benefit .desc {
   flex: 1;
@@ -782,6 +783,9 @@ section.benefit::after {
 }
 .benefit .desc p {
   font-weight: 300;
+}
+.benefit .desc p span {
+  display: block;
 }
 .benefit .items {
   flex: 2;
