@@ -7,6 +7,11 @@ $(function () {
     $("header").removeClass("active");
     $(".header_drop_down").stop().slideUp("fast");
   });
+  // Section 클릭시 Sitemap 종료
+  $("section").click(function () {
+    $(".sitemap").stop().fadeOut();
+    $(".trigger").removeClass("active");
+  });
   /* ##### Header - GNB ##### */
   $(".gnb").mouseenter(function () {
     $(this).addClass("active");
@@ -52,6 +57,22 @@ $(function () {
       // 스크롤을 아예 내리지 않았을때(최상단)
       $(".btn_top").removeClass("active");
     }
+  });
+  /* ##### Mobile Sitemap ##### */
+  $("span.mobile_accordion_title").click(function () {
+    $(this)
+      .parent()
+      .siblings()
+      .children("span.mobile_accordion_title")
+      .removeClass("active");
+    $(this).toggleClass("active");
+    $(".mobile_accordion_content").stop().slideUp();
+    $(this).next().stop().slideToggle();
+  });
+  /* ##### Event Modal ##### */
+  // Close Button
+  $(".btn_close_event").click(function () {
+    $(".event_modal, .overlay").fadeOut();
   });
   /* ##### WOW.js ##### */
   wow = new WOW({

@@ -14,11 +14,15 @@
       referrerpolicy="no-referrer"
     ></script>
     <!-- Custom CSS & JS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="custom.js"></script>
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="./css/responsive.css">
   </head>
   <body>
     <div class="container">
+      <!-- Overlay -->
+      <div class="overlay"></div>
       <!-- Header -->
       <header>
         <a class="logo" href="#none">
@@ -188,6 +192,69 @@
                 <a href="#none">회원가입</a>
                 <a href="#none">개인정보 처리방침</a>
                 <a href="#none">이용약관</a>
+              </div>
+            </div>
+            <!-- Mobile Sitemap -->
+            <div class="mobile_sitemap">
+              <div class="mobile_sitemap_header">
+                <div class="mobile_input_field">
+                  <input type="text" placeholder="검색어를 입력해주세요.">
+                  <i class="bi bi-search"></i>
+                </div>
+                <div class="btns">
+                  <a class="btn_sign_in" href="#none">로그인</a>
+                  <a class="btn_sign_up" href="#none">회원가입</a>
+                </div>
+              </div>
+              <div class="mobile_sitemap_section">
+                <a class="mobile_registration" href="#none">정품등록하기</a>
+                <ul class="mobile_accordion">
+                  <li>
+                    <span class="mobile_accordion_title">PRODUCT</span>
+                    <div class="mobile_accordion_content">
+                      <a href="#none">스페셜에디션</a>
+                      <a href="#none">대형/빌트인</a>
+                      <a href="#none">소형가전</a>
+                      <a href="#none">홈카페</a>
+                      <a href="#none">쿡웨어</a>
+                      <a href="#none">프로페셔널(전문가용)</a>
+                      <a href="#none">추가구성품</a>
+                      <a href="#none">서비스</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="mobile_accordion_title">COLLECTION</span>
+                    <div class="mobile_accordion_content">
+                      <a href="#none">50's Style</a>
+                      <a href="#none">Victoria</a>
+                      <a href="#none">Dolce stil Novo</a>
+                      <a href="#none">Classic</a>
+                      <a href="#none">Linea</a>
+                      <a href="#none">SMEG X FIAT</a>
+                      <a href="#none">SMEG X D&G</a>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="mobile_accordion_title" href="#none">SMEGAZINE</a>
+                  </li>
+                  <li>
+                    <span class="mobile_accordion_title">CUSTOMER SERVICE</span>
+                    <div class="mobile_accordion_content">
+                      <a href="#none">공지사항</a>
+                      <a href="#none">이벤트</a>
+                      <a href="#none">스메그 리뷰</a>
+                      <a href="#none">매장안내</a>
+                      <a href="#none">FAQ</a>
+                      <a href="#none">A/S신청</a>
+                      <a href="#none">1:1문의</a>
+                      <a href="#none">제휴/대량구매 문의</a>
+                      <a href="#none">리퍼브샵</a>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="mobile_accordion_title" href="#none">스메그 소개</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -535,10 +602,10 @@
           <div class="desc">
             <h2>정품등록 혜택</h2>
             <p>
-              스메그를 소유하는 그 이상의 가치를 스메그 서비스를 통해<br />
-              누려 보세요. 스메그 서비스는 회사 사정에 따라 별도<br />
-              고지없이 변경/중단 될 수 있습니다.<br />
-              AS접수는 정품등록 없이 가능합니다.<br />
+              스메그를 소유하는 그 이상의 가치를 스메그 서비스를 통해
+              누려 보세요. 스메그 서비스는 회사 사정에 따라 별도
+              고지없이 변경/중단 될 수 있습니다.
+              AS접수는 정품등록 없이 가능합니다.
               (제품수령일 + 1 영업일 내 접수 가능)
             </p>
           </div>
@@ -593,10 +660,15 @@
                 <a href="#none">개인정보처리방침</a>
                 <a href="#none">제휴/대량구매</a>
               </div>
+              <div class="repair">
+                <a href="#none">1:1 문의</a>
+                <a href="#none">A/S 신청</a>
+              </div>
             </div>
             <div class="smeg_info">
               <p>
-                (주)제이컬렉션 서울특별시 강남구 봉은사로 103길 5, 3층(삼성동,
+                (주)제이컬렉션<br>
+                 서울특별시 강남구 봉은사로 103길 5, 3층(삼성동,
                 성재빌딩)<br />
                 대표. 정태호 사업자등록번호. 206-86-72765 통신판매신고번호. 제
                 2018-서울강남-04317호<br />
@@ -623,6 +695,34 @@
           </div>
         </div>
       </footer>
+      <!-- Event Modal -->
+      <div class="event_modal">
+        <div class="logo">
+          <img src="./image/smeg_logo.png" alt="SMEG 로고" />
+        </div>
+        <div class="items">
+          <div class="item">
+            <img src="./image/event01.png" alt="이달의 오븐 프로모션" />
+          </div>
+          <div class="item">
+            <img src="./image/event06.png" alt="스메그 웨딩페스타" />
+          </div>
+          <div class="item">
+            <img src="./image/event02.png" alt="리니아 오븐 런칭기념 세일" />
+          </div>
+          <div class="item">
+            <img src="./image/event05.png" alt="스메그 엠버서더 2기모집" />
+          </div>
+        </div>
+        <div class="input_field">
+          <input type="checkbox" id="dont_see" />
+          <label for="dont_see">오늘 하루동안 보지 않기</label>
+        </div>
+        <span class="btn_close_event">
+          <i class="xi-close-thin"></i>
+        </span>
+        </div>
+      </div>
       <div class="btn_top">
         <a href="#">
           <i class="xi-angle-up"></i>

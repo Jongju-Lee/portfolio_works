@@ -41,10 +41,20 @@ body {
   color: #333;
   overflow-x: hidden;
 }
-/* ########## Layout ########## */
+/* ########## container ########## */
 .container {
   width: 100vw;
   overflow: hidden;
+}
+/* ##### Overlay ##### */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
 }
 /* ########## Header ########## */
 header {
@@ -322,7 +332,7 @@ header.active .trigger span {
 .sitemap_search {
   position: relative;
   height: 450px;
-  background: url(./image/full_menu_img.png) no-repeat bottom center / cover;
+  background: url(../image/full_menu_img.png) no-repeat bottom center / cover;
   padding: 20px;
 }
 .sitemap_search input {
@@ -472,6 +482,10 @@ header.active .trigger span {
 .smegazine_drop_down .item:hover span {
   color: #fff;
 }
+/* ########## Mobile Sitemap ########## */
+.mobile_sitemap {
+  display: none;
+}
 /* ########## Section - Intro ########## */
 section.intro {
   width: 100vw;
@@ -493,14 +507,14 @@ section.intro iframe {
   height: 600px;
 }
 .coffee .learn_more {
-  background: url(./image/main_visual_02.jpg) no-repeat center center / cover;
+  background: url(../image/main_visual_02.jpg) no-repeat center center / cover;
 }
 .mixer .learn_more {
-  background: url(./image/main_item_visual_hmf01.png) no-repeat center center /
+  background: url(../image/main_item_visual_hmf01.png) no-repeat center center /
     cover;
 }
 .wine_cooler .learn_more {
-  background: url(./image/main_item_visual_SCV115A.png) no-repeat center center /
+  background: url(../image/main_item_visual_SCV115A.png) no-repeat center center /
     cover;
 }
 /* ##### Heading ##### */
@@ -527,12 +541,16 @@ section.intro iframe {
 :is(.mixer_heading, .wine_cooler_heading) a {
   border-color: #fff;
 }
-/* Coffee_heading */
-.coffee_heading h2 {
+/* Coffee, Mixer, Wine Cooler heading */
+.coffee_heading h2,
+.mixer_heading h2,
+.wine_cooler_heading h2 {
   font-size: 24px;
   font-weight: 500;
 }
-.coffee_heading p {
+.coffee_heading p,
+.mixer_heading p,
+.wine_cooler_heading p {
   font-size: 16px;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -732,7 +750,7 @@ section.news {
 /* ########## Section - Benefit ########## */
 section.benefit {
   position: relative;
-  background: url(./image/main_bottom_bg.jpg) no-repeat center center / cover;
+  background: url(../image/main_bottom_bg.jpg) no-repeat center center / cover;
   height: 440px;
 }
 section.benefit::after {
@@ -815,10 +833,10 @@ footer {
 .footer_inner > * {
   flex: 1;
 }
-footer .menu {
+.footer_inner .menu {
   color: #e3e3e3;
 }
-footer .menu .links {
+.footer_inner .menu .links {
   margin-top: 30px;
 }
 .introduce a {
@@ -841,6 +859,9 @@ footer .menu .links {
   font-size: 12px;
   margin-left: 22px;
   margin-right: 20px;
+}
+.footer_inner .menu .links .repair {
+  display: none;
 }
 .smeg_info p {
   margin: 40px 0;
@@ -902,6 +923,7 @@ footer .sns a:nth-child(4) {
   animation: upAndDown 1.2s linear infinite both;
   opacity: 0;
   transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 .btn_top.active {
   opacity: 1;
@@ -925,4 +947,77 @@ footer .sns a:nth-child(4) {
   100% {
     transform: translateY(0);
   }
+}
+/* ########## Event Modal ########## */
+.event_modal {
+  position: fixed;
+  top: 50%;
+  left: 120px;
+  transform: translateY(-50%);
+  padding: 20px;
+  background-color: #fff;
+  z-index: 1000;
+}
+.event_modal .logo {
+  width: 100px;
+  margin-bottom: 5px;
+}
+.event_modal .logo img {
+  width: inherit;
+  filter: invert(1);
+}
+.event_modal .items {
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.event_modal .item {
+  width: 375px;
+  height: 125px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.event_modal .item:not(:last-child) {
+  margin-bottom: 15px;
+}
+.event_modal .item img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+.event_modal .input_field {
+  margin-top: 5px;
+}
+.event_modal .input_field input {
+  display: none;
+}
+.event_modal .input_field label {
+  color: #777;
+  cursor: pointer;
+}
+.event_modal .input_field label:hover {
+  text-decoration: underline;
+}
+.event_modal .input_field label::before {
+  content: "\F584";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(2px);
+  margin-right: 5px;
+  transition: 0.2s;
+}
+.btn_close_event {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn_close_event:hover {
+  transform: rotate(90deg);
+}
+/* Checked Function */
+.event_modal .input_field input:checked + label::before {
+  content: "\F26C";
 }
