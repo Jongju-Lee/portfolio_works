@@ -107,6 +107,7 @@ header .logo img {
   background-color: #e50914;
   padding: 3px 15px;
   border-radius: 5px;
+  text-decoration: none;
 }
 /* ########## Section - Intro ########## */
 section.intro {
@@ -229,8 +230,6 @@ section.intro::after {
   justify-content: center;
   align-items: center;
 }
-.feature_heading_inner {
-}
 .feature_heading_inner h2 {
   font-size: 48px;
 }
@@ -317,6 +316,7 @@ section.faq {
   background-color: #404040;
 }
 .accordion label {
+  position: relative;
   display: block;
   margin-bottom: 1px;
   cursor: pointer;
@@ -325,7 +325,10 @@ section.faq {
 .accordion label::after {
   content: "\F64D";
   font-family: "bootstrap-icons";
-  float: right;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
   font-size: 30px;
   transition: 0.35s;
 }
@@ -368,7 +371,7 @@ input[id="faq3"]:checked ~ label[for="faq3"]::after,
 input[id="faq4"]:checked ~ label[for="faq4"]::after,
 input[id="faq5"]:checked ~ label[for="faq5"]::after,
 input[id="faq6"]:checked ~ label[for="faq6"]::after {
-  transform: rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
 }
 /* ########## Section - Footer ########## */
 footer {
