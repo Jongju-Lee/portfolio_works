@@ -35,33 +35,19 @@ body {
   font-size: 15px;
   line-height: 1.5em;
   margin: 0;
-  height: 100vh;
   color: #fff;
   background-color: #000;
   overflow-x: hidden;
 }
 /* ##### COMMON ##### */
-section.feature {
-  display: flex;
-}
-.feature_heading {
-}
-.feature_heading h2 {
-}
-.feature_heading p {
-}
-.feature_content {
-}
-.feature_content img {
-}
-/* ########## Container ########## */
-.container {
-}
 .inner {
   width: 1250px;
   margin: auto;
 }
-
+section:not(.intro) {
+  padding: 70px 0;
+  border-bottom: 5px solid #232323;
+}
 /* ########## Header ########## */
 header {
   position: absolute;
@@ -71,7 +57,6 @@ header {
   z-index: 1000;
 }
 header .inner {
-  width: 1250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -160,7 +145,7 @@ section.intro::after {
   margin-top: 20px;
 }
 .input_field {
-  width: 70%;
+  width: 600px;
   margin: auto;
   display: flex;
   gap: 5px;
@@ -206,8 +191,9 @@ section.intro::after {
 }
 .intro .banner p {
   position: absolute;
-  top: 55%;
+  top: 57%;
   left: 53%;
+  line-height: 1.7em;
   transform: translate(-50%, -50%);
   margin-top: 0;
 }
@@ -226,69 +212,200 @@ section.intro::after {
   margin-left: 5px;
   font-weight: bold;
 }
-.intro .banner a::after {
+/* ##### Section - Enjoy, Watch, Kids, Download ##### */
+/* COMMON */
+.feature_inner {
+  width: 1250px;
+  margin: auto;
+  display: flex;
+  gap: 20px;
 }
-/* ########## Section - Enjoy ########## */
-/* ########## Section - Watch ########## */
-/* ########## Section - Kids ########## */
-/* ########## Section - Download ########## */
+.feature_heading,
+.feature_content {
+  flex: 1;
+}
+.feature_heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feature_heading_inner {
+}
+.feature_heading_inner h2 {
+  font-size: 48px;
+}
+.feature_heading_inner p {
+  font-size: 24px;
+  line-height: 1.5em;
+}
+.feature_content {
+  position: relative;
+}
+.feature_content > img {
+  width: 100%;
+}
+/* ##### Iframe ##### */
+.enjoy iframe {
+  position: absolute;
+  top: 47.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 81%;
+  z-index: -1;
+}
+.watch iframe {
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: -1;
+}
+/* Section - Download */
 .add_on {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 120px;
+  padding: 15px;
+  background-color: #000;
+  border: 3px solid #999;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 img.poster {
+  height: 100%;
+  border-radius: 5px;
 }
 .add_on span {
+  flex: 1;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
 }
 .add_on span em {
+  font-size: 14px;
+  display: block;
+  font-style: normal;
+  color: dodgerblue;
 }
 img.download_gif {
+  width: 50px;
+  height: 50px;
 }
 /* ########## Section - FAQ ########## */
 section.faq {
-}
-.accordion_outer {
+  padding: 70px 0;
 }
 .accordion_outer h1 {
+  font-size: 48px;
+  text-align: center;
 }
 .accordion {
+  margin-top: 25px;
 }
 .accordion input {
+  display: none;
+}
+.accordion label,
+.faq_desc {
+  font-size: 24px;
+  background-color: #404040;
 }
 .accordion label {
+  display: block;
+  margin-bottom: 1px;
+  cursor: pointer;
+  padding: 25px;
+}
+.accordion label::after {
+  content: "\F64D";
+  font-family: "bootstrap-icons";
+  float: right;
+  font-size: 30px;
+  transition: 0.35s;
 }
 .faq_desc {
+  margin-bottom: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
 }
 .faq_desc p {
+  margin: 25px;
+  line-height: 1.5em;
 }
 .faq_desc p a {
+  display: block;
+  margin-top: 25px;
+  text-decoration: underline;
 }
 .enter_membership {
+  margin-top: 50px;
 }
 .enter_membership span {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
-.enter_membership .input_field {
+/* Accordion Checked Function */
+input[id="faq1"]:checked ~ label[for="faq1"] + .faq_desc,
+input[id="faq2"]:checked ~ label[for="faq2"] + .faq_desc,
+input[id="faq3"]:checked ~ label[for="faq3"] + .faq_desc,
+input[id="faq4"]:checked ~ label[for="faq4"] + .faq_desc,
+input[id="faq5"]:checked ~ label[for="faq5"] + .faq_desc,
+input[id="faq6"]:checked ~ label[for="faq6"] + .faq_desc {
+  max-height: 500px;
+}
+input[id="faq1"]:checked ~ label[for="faq1"]::after,
+input[id="faq2"]:checked ~ label[for="faq2"]::after,
+input[id="faq3"]:checked ~ label[for="faq3"]::after,
+input[id="faq4"]:checked ~ label[for="faq4"]::after,
+input[id="faq5"]:checked ~ label[for="faq5"]::after,
+input[id="faq6"]:checked ~ label[for="faq6"]::after {
+  transform: rotate(45deg);
 }
 /* ########## Section - Footer ########## */
 footer {
+  padding: 70px 0;
 }
 .sitemap_outer {
-}
-.sitemap_outer span {
-}
-.sitemap_outer span a {
+  font-size: 16px;
+  color: #999;
+  line-height: 2.5em;
 }
 .sitemap {
+  margin-top: 15px;
+  display: flex;
 }
 .sitemap .item {
+  flex: 1;
 }
 .sitemap .item a {
+  display: block;
+  transition: 0.2s;
+}
+.sitemap .item a:hover {
+  color: #fff;
 }
 footer .language {
+  width: fit-content;
+  margin: 20px 0;
 }
 footer .info {
+  color: #999;
 }
 footer .info span {
+  font-size: 14px;
 }
 footer .info p {
+  font-size: 12px;
 }
 footer .info p a {
+  display: block;
 }
