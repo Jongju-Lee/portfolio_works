@@ -76,17 +76,16 @@ header .logo img {
   position: relative;
 }
 .language select {
-  padding: 3px 30px;
+  padding: 5px 30px;
   border-radius: 5px;
   background-color: #000;
   color: #fff;
-  transform: translateY(-1px);
 }
 .language::before {
   content: "\F658";
   font-family: "bootstrap-icons";
   position: absolute;
-  top: 1px;
+  top: 4px;
   left: 10px;
   width: 20px;
   height: 20px;
@@ -96,7 +95,7 @@ header .logo img {
   content: "\F229";
   font-family: "bootstrap-icons";
   position: absolute;
-  top: 2px;
+  top: 5px;
   right: 5px;
   width: 20px;
   height: 20px;
