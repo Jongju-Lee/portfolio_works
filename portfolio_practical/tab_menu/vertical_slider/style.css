@@ -27,15 +27,20 @@ section {
   height: inherit;
   border: 1px solid #000;
 }
-section h1 {
+.vertical_outer {
   position: absolute;
-  top: 150px;
+  top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+section h1 {
+  position: relative;
   font-weight: 500;
-  transform: translateX(-50%);
   text-align: center;
   font-size: 50px;
   padding-bottom: 15px;
+  margin-bottom: 10px;
 }
 section h1::after {
   content: "";
@@ -48,14 +53,10 @@ section h1::after {
   background-color: crimson;
 }
 .vertical {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 50%;
+  margin: auto;
   height: 400px;
   text-align: center;
-  /* overflow: hidden; */
 }
 .vertical input {
   display: none;
@@ -97,7 +98,8 @@ section h1::after {
 }
 .btn_tab {
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
+  left: 0;
   width: 100%;
 }
 .btn_tab label {

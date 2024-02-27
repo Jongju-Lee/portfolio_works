@@ -62,13 +62,13 @@ section {
   transition-delay: 0.5s;
 }
 .tab1 .sale {
-  background-color: yellowgreen;
+  background-color: #bdc3c7;
 }
 .tab2 .sale {
   background-color: crimson;
 }
 .tab3 .sale {
-  background-color: royalblue;
+  background-color: #da9b34;
 }
 .tab .sale span {
   display: inline-block;

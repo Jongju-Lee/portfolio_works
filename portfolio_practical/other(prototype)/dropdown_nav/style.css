@@ -159,6 +159,7 @@ header {
   width: 100%;
   background-color: #fff;
   display: none;
+  z-index: 1;
 }
 .gnb li .drop_menu a {
   display: block;

@@ -1,10 +1,10 @@
-/* Google Web Fonts CDN */
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap");
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /* Reset CSS */
 * {
   box-sizing: border-box;
   outline: none;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 a {
   text-decoration: none;
@@ -28,8 +28,6 @@ body {
   margin: 0;
   height: 100vh;
   color: #333;
-  background-color: #badc58;
-  background-image: linear-gradient(120deg, #8ddc58 0%, #badc58 100%);
 }
 /* ########## Health Food ########## */
 .health_food {
@@ -45,8 +43,7 @@ body {
   display: inline-block;
   width: 300px;
   height: 200px;
-  margin: 0 30px;
-  background-color: #badc58;
+  margin: 0 10px;
 }
 .item:hover {
   box-shadow: none;
@@ -61,8 +58,21 @@ body {
 }
 .front {
   z-index: 1;
-  background-color: #eeffe3;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.item:first-child .front {
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+}
+.item:nth-child(2) .front {
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%
+  );
+}
+.item:last-child .front {
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
 .item:hover .front {
   transform: translateY(-50%);
@@ -91,6 +101,9 @@ body {
   z-index: 0;
   transition: 0.5s;
 }
+.back p {
+  margin-top: 20px;
+}
 .item:hover .back {
   transform: translateY(50%);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -105,8 +118,24 @@ body {
   border-radius: 20px;
   transition: 0.5s;
 }
-.back a:hover {
+
+.item:first-child .back a {
+  background-color: #6ab04c;
+}
+.item:nth-child(2) .back a {
+  background-color: #ff9b9f;
+}
+.item:last-child .back a {
+  background-color: #d2fb7b;
+}
+.item:first-child .back a:hover {
   background-color: seagreen;
+}
+.item:nth-child(2) .back a:hover {
+  background-color: #e7686d;
+}
+.item:last-child .back a:hover {
+  background-color: #7cd074;
 }
 /* hover Animation */
 @keyframes imageScale {
