@@ -38,10 +38,15 @@ input[id="search"] {
   border: none;
   font-size: 18px;
   transition: 0.5s;
+  color: #333;
   opacity: 1;
 }
 .search_box input::placeholder {
   color: #999;
+  transition: 0.35s;
+}
+.search_box input:focus::placeholder {
+  color: transparent;
 }
 .search_box .icon {
   position: absolute;
@@ -59,10 +64,26 @@ input[id="search"] {
   cursor: pointer;
 }
 /* Checked Function */
+input[id="search"]:checked + .search_box {
+  animation: upDown 1.2s linear infinite both;
+  animation-delay: 0.5s;
+}
 input[id="search"]:checked + .search_box input {
   width: 60px;
   opacity: 0;
 }
 input[id="search"]:checked + .search_box .icon {
   border-radius: 30px;
+}
+/* Icon Animation */
+@keyframes upDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
