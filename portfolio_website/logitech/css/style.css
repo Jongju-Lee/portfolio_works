@@ -30,8 +30,247 @@ ul {
   list-style: none;
 }
 body {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5em;
   margin: 0;
+  font-weight: 300;
+  color: #333;
+}
+/* ########## Logitech ########## */
+/* ##### COMMON ##### */
+.inner {
+  width: 1250px;
+  margin: auto;
+}
+a.language {
+  font-weight: 700;
+}
+a.language:hover {
+  text-decoration: underline;
+}
+a.language::before {
+  content: "\F882";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  margin-right: 5px;
+  transform: translateY(2px);
+}
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+a.btn_heading {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: #fff;
+  color: #333;
+  font-weight: 700;
+  border: 2px solid transparent;
+  transition: 0.35s;
+}
+a.btn_heading:hover {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+/* ##### Container ##### */
+.container {
+}
+/* ########## Header ########## */
+header {
+}
+.header_top {
+  padding: 10px 0;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+}
+.small_logo {
+  position: relative;
+}
+.small_logo::before {
+  content: url(../image/logitechg-grey.svg);
+}
+.small_logo:hover::before {
+  content: url(../image/logitechg.svg);
+}
+.small_logo::after {
+  content: "|";
+  color: #bbb;
+  font-size: 18px;
+  display: inline-block;
+  transform: translateY(-2px);
+  margin: 0 10px;
+}
+.our_brand {
+  position: relative;
+  cursor: pointer;
+}
+.our_brand input {
+  display: none;
+}
+.our_brand label {
+  cursor: pointer;
+}
+.our_brand label::after {
+  content: "\F282";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 5px;
+  transition: 0.5s;
+}
+input[id="brand"]:checked + label::after {
+  transform: rotate(180deg);
+}
+.our_brand_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: 0.5s;
+}
+input[id="brand"]:checked ~ .our_brand_list {
+  max-height: 200px;
+}
+.our_brand_list li a {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 10px 5px;
+  border-bottom: 1px solid #ddd;
+}
+.our_brand_list li:last-child a {
+  border-bottom: none;
+}
+.our_brand_list li a::before {
+}
+a.stream::before {
+  content: url(../image/streamlabs-grey.svg);
+}
+a.ultimate::before {
+  content: url(../image/ultimate-ears-grey.svg);
+}
+a.jaybird::before {
+  content: url(../image/jaybird-grey.svg);
+}
+a.stream:hover::before {
+  content: url(../image/streamlabs.svg);
+}
+a.ultimate:hover::before {
+  content: url(../image/ultimate-ears.svg);
+}
+a.jaybird:hover::before {
+  content: url(../image/jaybird.svg);
+}
+/* ########## Header - Nav ########## */
+nav {
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1250px;
+  height: auto;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #555;
+  z-index: 9999;
+}
+/* ##### Nav - GNB ##### */
+.logo {
+  width: 120px;
+}
+.logo img {
+  width: 100%;
+}
+.gnb {
+  display: flex;
+  background-color: transparent;
+}
+.gnb li {
+}
+.gnb_title {
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.gnb_title:hover {
+  background-color: #fff;
+}
+.gnb_inner {
+  position: fixed;
+  top: 100px;
+  left: -175px;
+  width: 100vw;
+  background-color: #fff;
+  display: none;
+}
+.gnb_inner_item {
+}
+.gnb_inner_item img {
+}
+.gnb_inner_item a {
+}
+.gnb_inner_item a.title {
+}
+/* ##### Header - LNB ##### */
+.lnb a {
+  display: inline-block;
+  margin-left: 20px;
+  transition: 0.2s;
+}
+.lnb a:hover {
+  color: #ddd;
+}
+.lnb a:nth-child(1) {
+  font-size: 15px;
+  transform: translateY(-2px);
+}
+.lnb a:nth-child(2) {
+  font-size: 20px;
+}
+/* ########## Section - Intro ########## */
+section.intro {
+  position: relative;
+  width: 100%;
+}
+section.intro img {
+  max-width: 100%;
+  height: auto;
+}
+.heading_intro h1 {
+  font-size: 65px;
+  font-weight: 700;
+}
+.heading_intro b {
+  font-size: 20px;
+  display: block;
+  margin: 20px 0;
+}
+.heading_intro span {
+  font-size: 18px;
+}
+.heading_intro .btn_heading {
+  background-color: #333;
+  color: #fff;
+}
+.heading_intro .btn_heading:hover {
+  border: 2px solid #333;
   color: #333;
 }
