@@ -32,13 +32,17 @@ body {
     transform: translate(-50%, -50%) rotate(0deg);
     box-shadow: 1px 5px 2px #e65c00;
   }
-  50% {
-    transform: translate(-50%, -50%) rotate(180deg);
+  33% {
+    transform: translate(-50%, -50%) rotate(120deg);
     box-shadow: 1px 5px 2px #18b201;
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(240deg);
+    box-shadow: 1px 5px 2px #0456c8;
   }
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
-    box-shadow: 1px 5px 2px #0456c8;
+    box-shadow: 1px 5px 2px #e65c00;
   }
 }
 .stroke::after {
