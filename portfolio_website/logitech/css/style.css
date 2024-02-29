@@ -316,21 +316,6 @@ a.mega_box_item_title {
   font-weight: 700;
   margin-bottom: 10px;
 }
-
-/* 작업하기 편하게 visible */
-.product + .mega_box {
-  display: none;
-}
-.search + .mega_box {
-  display: none;
-}
-.business + .mega_box {
-  display: none;
-}
-.support + .mega_box {
-  display: none;
-}
-
 /* ##### Header - LNB ##### */
 .lnb a {
   display: inline-block;
@@ -375,4 +360,57 @@ section.intro img {
 .heading_intro .btn_heading:hover {
   border: 2px solid #333;
   color: #333;
+}
+/* ########## Section - Main Product ########## */
+.main_product {
+  margin: 70px 0;
+}
+.product_items {
+  display: flex;
+  gap: 30px;
+}
+.product_item {
+  flex: 1;
+}
+.product_item .photo {
+  overflow: hidden;
+}
+.product_item .photo a img {
+  display: block;
+  width: 100%;
+  transition: 0.2s;
+}
+.product_item .photo a img:hover {
+  transform: scale(1.05);
+}
+.product_item .desc {
+  margin-top: 20px;
+}
+.product_item .desc a:hover {
+  text-decoration: underline;
+}
+.product_item .desc .title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.product_item .desc p {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.product_item:last-child .desc p {
+  margin-bottom: 10px;
+}
+.product_item .desc .buy {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.product_item .desc .buy::after {
+  content: "\F285";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: text-bottom;
+  transform: translateY(1px);
 }
