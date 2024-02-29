@@ -93,7 +93,7 @@ a.btn_heading:hover {
 }
 /* ########## Header ########## */
 header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: 9999;
 }
@@ -413,4 +413,64 @@ section.intro img {
   margin-left: 5px;
   vertical-align: text-bottom;
   transform: translateY(1px);
+}
+/* ##### Main Product - Product Slider ##### */
+.product_slider {
+  margin-top: 100px;
+}
+.slider_items {
+  display: flex;
+  gap: 20px;
+}
+.slider_items .item_wrapper {
+}
+.slider_items .item {
+  position: relative;
+}
+.slider_items .item a {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+.slider_items .item a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.35s;
+}
+.slider_items .item a img:hover {
+  transform: scale(1.1);
+}
+.slider_items .item span {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: 700;
+  pointer-events: none;
+}
+.slider_items .item span.reverse {
+  top: 50px;
+}
+/* Product Slider - keyboard */
+.slider_items.keyboard .left {
+  flex: 7;
+}
+.slider_items.keyboard .left .item_wrapper {
+  display: flex;
+}
+.slider_items.keyboard .right {
+  flex: 3;
+}
+.item.headset {
+  height: 100%;
+}
+/* Product Slider - Camera */
+.item.remote {
+  height: 100%;
+}
+.video_call {
+  margin-top: 20px;
 }
