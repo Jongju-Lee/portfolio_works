@@ -1,8 +1,15 @@
 $(function () {
   $(".gnb > li").mouseenter(function () {
-    $(this).children(".gnb_inner").stop().fadeIn();
+    $(".mega_box").stop().fadeOut();
+    $(this).children(".mega_box").stop().fadeIn();
   });
-  $(".gnb > li").mouseleave(function () {
-    $(this).children(".gnb_inner").stop().fadeOut();
+  $("nav").mouseleave(function () {
+    $(".mega_box").stop().fadeOut();
   });
+  $(".btn_close").click(function () {
+    $(this).parent().parent().stop().fadeOut();
+  });
+  // $(".gnb > li").mouseleave(function () {
+  //   $(this).children(".mega_box").stop().fadeOut();
+  // });
 });

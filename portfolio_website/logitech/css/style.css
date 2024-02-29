@@ -82,12 +82,26 @@ a.btn_heading:hover {
 /* ##### Container ##### */
 .container {
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
 /* ########## Header ########## */
 header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 }
 .header_top {
   padding: 10px 0;
   color: #777;
+}
+.header_top .inner {
   display: flex;
   justify-content: space-between;
 }
@@ -114,6 +128,7 @@ header {
 .our_brand {
   position: relative;
   cursor: pointer;
+  padding: 0 10px;
 }
 .our_brand input {
   display: none;
@@ -142,6 +157,8 @@ input[id="brand"]:checked + label::after {
   background-color: #fff;
   overflow: hidden;
   transition: 0.5s;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
 }
 input[id="brand"]:checked ~ .our_brand_list {
   max-height: 200px;
@@ -150,13 +167,11 @@ input[id="brand"]:checked ~ .our_brand_list {
   position: relative;
   display: block;
   text-align: center;
-  padding: 10px 5px;
+  padding: 10px 15px;
   border-bottom: 1px solid #ddd;
 }
 .our_brand_list li:last-child a {
   border-bottom: none;
-}
-.our_brand_list li a::before {
 }
 a.stream::before {
   content: url(../image/streamlabs-grey.svg);
@@ -179,25 +194,26 @@ a.jaybird:hover::before {
 /* ########## Header - Nav ########## */
 nav {
   position: absolute;
-  top: 43px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 1250px;
-  height: auto;
+  transform: translate(-50%);
+  width: 100%;
   padding: 30px 0;
+  background-color: transparent;
+  transition: 0.5s;
+  z-index: 1000;
+}
+nav .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #555;
-  z-index: 9999;
 }
-/* ##### Nav - GNB ##### */
 .logo {
   width: 120px;
 }
 .logo img {
   width: 100%;
 }
+/* ##### Nav - GNB ##### */
 .gnb {
   display: flex;
   background-color: transparent;
@@ -213,22 +229,108 @@ nav {
 .gnb_title:hover {
   background-color: #fff;
 }
-.gnb_inner {
-  position: fixed;
-  top: 100px;
-  left: -175px;
-  width: 100vw;
+/* GNB - MegaBox - COMMON */
+.mega_box_item.border_right {
+  border-right: 1px solid #ddd;
+  margin-right: 50px;
+}
+.mega_box_item li img.search_mega_box_photo {
+  width: 200px;
+  height: auto;
+}
+.mega_box_item li a.search_mega_box_desc {
+  font-size: 15px;
+  font-weight: 700;
+}
+.mega_box_item li a.search_mega_box_desc::after {
+  content: "\F285";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(2px);
+  margin-left: 5px;
+}
+/* GNB - MegaBox */
+.mega_box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background-color: #fff;
+  color: #333;
+}
+.mega_box_inner {
+  position: relative;
+  width: 1250px;
+  margin: auto;
+  padding-top: 50px;
+  padding-left: 100px;
+}
+.mega_box_inner .btn_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.mega_box_inner .btn_close:hover {
+  text-decoration: underline;
+}
+.mega_box_inner .btn_close::after {
+  content: "\F62A";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  font-size: 20px;
+  transform: translateY(5px);
+}
+.mega_box_row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+}
+.mega_box_item {
+  width: 200px;
+}
+.mega_box_item li {
+}
+.mega_box_item li img {
+  height: 30px;
+  margin-bottom: 10px;
+}
+.mega_box_item.width {
+  width: 300px;
+  padding-right: 50px;
+}
+.mega_box_item.width li img {
+  width: 100%;
+  height: auto;
+}
+.mega_box_item li a {
+  display: inline-block;
+  padding: 5px;
+  padding-left: 0;
+}
+.mega_box_item li a:hover {
+  text-decoration: underline;
+}
+a.mega_box_item_title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* 작업하기 편하게 visible */
+.product + .mega_box {
   display: none;
 }
-.gnb_inner_item {
+.search + .mega_box {
+  display: none;
 }
-.gnb_inner_item img {
+.business + .mega_box {
+  display: none;
 }
-.gnb_inner_item a {
+.support + .mega_box {
+  display: none;
 }
-.gnb_inner_item a.title {
-}
+
 /* ##### Header - LNB ##### */
 .lnb a {
   display: inline-block;
@@ -247,7 +349,7 @@ nav {
 }
 /* ########## Section - Intro ########## */
 section.intro {
-  position: relative;
+  padding-top: 45px;
   width: 100%;
 }
 section.intro img {
