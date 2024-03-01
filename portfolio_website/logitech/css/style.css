@@ -364,7 +364,8 @@ section.intro img {
 }
 /* ########## Section - Main Product ########## */
 .main_product {
-  margin: 70px 0;
+  margin-top: 100px;
+  margin-bottom: 150px;
 }
 .product_items {
   display: flex;
@@ -535,7 +536,10 @@ section.intro img {
 /* Slick.js Custom CSS - Product Slider */
 /* Pagination Dots */
 .product_slider .slick-dots {
-  bottom: -50px;
+  bottom: -70px;
+}
+.product_slider .slick-dots li {
+  margin: 0 8px;
 }
 .product_slider .slick-dots li button:before {
   font-size: 0px;
@@ -585,3 +589,50 @@ section.intro img {
 .slick-next:before {
   content: "\F285";
 }
+/* ########## Section - Environment ########## */
+section.environment {
+}
+.envi_slider {
+  max-width: 100%;
+  height: 700px;
+}
+.envi_slider .item {
+  max-width: 100%;
+  position: relative;
+  height: auto;
+  height: 650px;
+  min-height: 500px;
+}
+.envi_slider .item .heading {
+  color: #fff;
+}
+.envi_slider .item .heading em {
+}
+.envi_slider .item .heading h2 {
+  font-size: 60px;
+}
+.envi_slider .item .heading p {
+}
+.envi_slider .item .heading span {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.envi_slider .item .btn_heading {
+}
+/* Item - Plastic */
+.envi_plastic {
+  background: url(../image/pcr-plastic-desktop.jfif) no-repeat center center /
+    cover;
+  width: 100%;
+  height: 100%;
+}
+/* Item - Future */
+.envi_future {
+}
+/* Item - Climate */
+/* Item - Carbon */
+/* Item - Society */
+/* Item - Award */
+/* Item - Introduction */
