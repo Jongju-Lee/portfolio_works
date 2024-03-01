@@ -35,6 +35,7 @@ body {
   margin: 0;
   font-weight: 300;
   color: #333;
+  overflow-x: hidden;
 }
 /* ########## Logitech ########## */
 /* ##### COMMON ##### */
@@ -415,62 +416,172 @@ section.intro img {
   transform: translateY(1px);
 }
 /* ##### Main Product - Product Slider ##### */
+/* COMMON */
 .product_slider {
   margin-top: 100px;
+  padding: 0 1px;
 }
 .slider_items {
-  display: flex;
-  gap: 20px;
+  overflow: hidden;
+  height: 700px;
 }
-.slider_items .item_wrapper {
+.slider_items span.reverse {
+  top: 30px;
+}
+/* Product Slider - Keyboard */
+.slider_items.keyboard .left {
+  float: left;
+  width: calc(70% - 10px);
+  margin-right: 10px;
+  height: inherit;
 }
 .slider_items .item {
   position: relative;
 }
-.slider_items .item a {
-  display: block;
-  height: 100%;
-  overflow: hidden;
+.slider_items.keyboard .left .item_wrapper {
+  width: 100%;
+  height: calc(30% - 10px);
 }
-.slider_items .item a img {
+.slider_items.keyboard .left .item_wrapper .item:first-child,
+.slider_items.keyboard .left .item_wrapper .item:nth-child(2) {
+  width: calc(50% - 10px);
+  height: 100%;
+}
+.slider_items.keyboard .left .item_wrapper .item:first-child {
+  float: left;
+  margin-right: 10px;
+}
+.slider_items.keyboard .left .item_wrapper .item:nth-child(2) {
+  float: right;
+  margin-left: 10px;
+}
+.slider_items.keyboard .left .item:first-child {
+  width: 100%;
+  height: calc(70% - 10px);
+  margin-bottom: 20px;
+}
+.slider_items.keyboard .left .item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.slider_items.keyboard .left .item a img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.35s;
 }
-.slider_items .item a img:hover {
-  transform: scale(1.1);
+.slider_items.keyboard .right {
+  float: right;
+  width: calc(30% - 10px);
+  margin-left: 10px;
+  height: 100%;
 }
-.slider_items .item span {
+.slider_items.keyboard .right .item {
+  height: 100%;
+}
+.slider_items.keyboard .right .item a,
+.slider_items.keyboard .right .item a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.slider_items.keyboard .right .item a img {
+  object-fit: cover;
+}
+.slider_items span {
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 16px;
   font-weight: 700;
-  pointer-events: none;
-}
-.slider_items .item span.reverse {
-  top: 50px;
-}
-/* Product Slider - keyboard */
-.slider_items.keyboard .left {
-  flex: 7;
-}
-.slider_items.keyboard .left .item_wrapper {
-  display: flex;
-}
-.slider_items.keyboard .right {
-  flex: 3;
-}
-.item.headset {
-  height: 100%;
 }
 /* Product Slider - Camera */
-.item.remote {
+.slider_items.camera :is(.left, .center, .right) {
+  float: left;
   height: 100%;
 }
-.video_call {
-  margin-top: 20px;
+.slider_items.camera :is(.left, .center) {
+  width: calc(33.333333% - 20px);
+  margin-right: 20px;
+}
+.slider_items.camera .center {
+  height: 100%;
+}
+.slider_items.camera .right {
+  width: 33.333333%;
+}
+.slider_items.camera .right .item:first-child {
+  height: calc(50% - 20px);
+  margin-bottom: 20px;
+}
+.slider_items.camera .right .item:nth-child(2) {
+  height: 50%;
+}
+.slider_items.camera .item {
+  width: 100%;
+  height: 100%;
+}
+.slider_items.camera .item a,
+.slider_items.camera .item a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.slider_items.camera .item a img {
+  object-fit: cover;
+}
+/* Slick.js Custom CSS - Product Slider */
+/* Pagination Dots */
+.product_slider .slick-dots {
+  bottom: -50px;
+}
+.product_slider .slick-dots li button:before {
+  font-size: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 1;
+  border: 3px solid transparent;
+  transition: 0.5s;
+}
+.product_slider .slick-dots li.slick-active button:before {
+  border-radius: 50%;
+  border: 3px solid #000;
+  background-color: transparent;
+}
+/* Prev, Next Arrows */
+.slick-prev,
+.slick-next {
+  width: 150px;
+  height: 100%;
+  z-index: 100;
+  transition: 0.35s;
+}
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #f4f4f4;
+}
+.slick-prev {
+  left: calc(-150px - 20px);
+}
+.slick-next {
+  left: calc(100% + 20px);
+}
+.slick-prev:before,
+.slick-next:before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "bootstrap-icons";
+  font-size: 50px;
+  color: #bbb;
+}
+.slick-prev:before {
+  content: "\F284";
+}
+.slick-next:before {
+  content: "\F285";
 }

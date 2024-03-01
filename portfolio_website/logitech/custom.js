@@ -9,7 +9,11 @@ $(function () {
   $(".btn_close").click(function () {
     $(this).parent().parent().stop().fadeOut();
   });
-  // $(".gnb > li").mouseleave(function () {
-  //   $(this).children(".mega_box").stop().fadeOut();
-  // });
+  /* ##### Slick.js - Main Product Slider ##### */
+  $(".product_slider").slick({
+    dots: true,
+    arrows: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
 });
