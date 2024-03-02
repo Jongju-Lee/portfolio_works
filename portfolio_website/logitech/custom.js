@@ -16,4 +16,11 @@ $(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
   });
+  /* ##### Slick.js - Environment ##### */
+  $(".envi_slider").slick({
+    dots: true,
+    arrows: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
 });
