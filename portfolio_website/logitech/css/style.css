@@ -172,9 +172,14 @@ header {
   width: 100%;
   z-index: 9999;
 }
+/* Mobile */
 .mobile_header {
   display: none;
 }
+.mobile_gnb {
+  display: none;
+}
+/* Mobile End */
 .header_top {
   padding: 10px 0;
   color: #777;
@@ -506,6 +511,15 @@ section.intro img {
 .slider_items span.reverse {
   top: 30px;
 }
+.slider_items .item a {
+  overflow: hidden;
+}
+.slider_items .item a img {
+  transition: 0.2s;
+}
+.slider_items .item a img:hover {
+  transform: scale(1.1);
+}
 /* Product Slider - Keyboard */
 .slider_items.keyboard .left {
   float: left;
@@ -729,6 +743,9 @@ footer {
   display: block;
   color: #bbb;
 }
+.sitemap .item a:hover {
+  text-decoration: underline;
+}
 .social {
   display: flex;
   justify-content: space-between;
@@ -782,6 +799,7 @@ footer {
 }
 .social .email .chk_field label {
   color: #bbb;
+  cursor: pointer;
 }
 .social .email .chk_field label::before {
   content: "\F582";
