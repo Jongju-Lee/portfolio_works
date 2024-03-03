@@ -1,0 +1,247 @@
+/* Bootstrap Icons CDN */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+/* font-family: "Architects Daughter", cursive; */
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Manrope", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2em;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  font-size: 15px;
+  line-height: 1.5em;
+  margin: 0;
+  color: #333;
+}
+/* ##### COMMON ##### */
+.container {
+}
+.inner {
+  width: 1200px;
+}
+.color_green {
+  color: #6fbc03;
+}
+.color_deep_green {
+  color: #00a669;
+}
+.btn_normal {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 17px;
+  font-weight: 800;
+  border-radius: 5px;
+}
+/* ########## Header ########## */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+header .logo {
+  width: 120px;
+}
+header .logo img {
+  width: inherit;
+}
+.header_content {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.lnb {
+  display: flex;
+  gap: 30px;
+}
+.lnb > li {
+  position: relative;
+  width: auto;
+  text-align: center;
+}
+.lnb_title {
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.35s;
+}
+.lnb_title:hover {
+  color: #00a669;
+}
+h4.lnb_title::after {
+  content: "\F282";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 5px;
+  transform: translateY();
+}
+.lnb_content {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  background-color: #333356;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.35s;
+}
+.lnb li:hover .lnb_content {
+  opacity: 1;
+  visibility: visible;
+}
+.lnb_content li a {
+  display: inline-block;
+  padding: 10px 0;
+  line-height: 1.8em;
+  transition: 0.35s;
+  font-weight: 500;
+}
+.lnb_content li a:hover {
+  color: #6fbc03;
+}
+span.search_icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+span.search_icon:hover {
+  color: #00a669;
+}
+a.btn_header {
+  padding: 15px 25px;
+  background-color: #00a669;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+  border-radius: 5px;
+  transition: 0.35s;
+}
+a.btn_header:hover {
+  background-color: #6fbc03;
+}
+/* ########## Section - Intro ########## */
+section.intro {
+  position: relative;
+  margin-top: 100px;
+  max-height: 110vh;
+}
+section.intro img {
+  width: 100%;
+  max-height: 110vh;
+  object-fit: cover;
+}
+section.intro .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.intro_heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45%;
+  color: #fff;
+  text-align: center;
+}
+.intro_heading h1 {
+  font-size: 80px;
+  font-weight: 800;
+}
+.intro_heading h1 span {
+  color: #dbf072;
+  font-family: "Architects Daughter", cursive;
+  font-weight: 400;
+  font-size: 85px;
+}
+.intro_heading p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin: 45px 0;
+}
+.intro_heading .btn_normal {
+  background-color: #dbf072;
+  color: #333;
+  transition: 0.35s;
+}
+.intro_heading .btn_normal:hover {
+  background-color: #00a669;
+  color: #fff;
+}
+.intro_bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #71c100;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.intro_bottom span {
+}
+.intro_bottom a {
+  background-color: #0b4d3c;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-weight: 600;
+  transition: 0.35s;
+}
+.intro_bottom a:hover {
+  background-color: #dbf072;
+  color: #333;
+}
+/* ########## Section - Campaign ########## */
+
+/* ########## Section - Focus ########## */
+/* ########## Section - Change ########## */
+/* ########## Section - Join ########## */
+/* ########## Section - Total ########## */
+/* ########## Section - Donations ########## */
+/* ########## Section - Help ########## */
+/* ########## Section - Happening ########## */
+/* ########## Footer ########## */
