@@ -599,7 +599,7 @@ section.join .heading h2 span {
 .join_item .current span b {
   display: block;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 800;
   color: #333;
   margin-bottom: 10px;
 }
@@ -617,7 +617,163 @@ section.join .inner .btn_wrapper .btn_normal:hover {
   color: #333;
 }
 /* ########## Section - Total ########## */
+section.total {
+  position: relative;
+  background: url(../image/home-11.jpg) no-repeat center center / cover;
+  min-height: 670px;
+}
+section.total::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+section.total .centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  z-index: 10;
+}
+section.total .centering h2 {
+  font-size: 46px;
+  font-weight: 700;
+  color: #fff;
+}
 /* ########## Section - Donations ########## */
+section.donations {
+  padding: 100px 0;
+  text-align: center;
+}
+section.donations .inner {
+}
+.donate_outer {
+  width: 100%;
+  padding: 100px 180px;
+  background-color: #dbf072;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.donate_heading {
+}
+.donate_heading .badge {
+  background-color: #333356;
+}
+.donate_heading h3 {
+  margin-top: 30px;
+  font-size: 46px;
+  font-weight: 800;
+  color: #333356;
+}
+.donate {
+  margin-top: 100px;
+}
+.donate input {
+  width: 100%;
+  padding: 20px;
+  padding-left: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 17px;
+  background: #fff url(../image/dollar.png) no-repeat center left 20px;
+}
+.donate .btn_field {
+  margin-top: 20px;
+}
+.donate .btn_field_row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.donate .btn_field_row button {
+  flex: 1;
+  height: 60px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #00a669;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.35s;
+}
+.donate .btn_field_row button:hover {
+  background-color: #14d1bb;
+}
+.donate .btn_normal {
+  margin-top: 40px;
+  background-color: #0b4d3c;
+  color: #fff;
+  transition: 0.35s;
+}
+.donate .btn_normal:hover {
+  background-color: #71c100;
+}
+.donors_outer {
+  margin-top: 100px;
+}
+.donors_outer h2 {
+  font-size: 60px;
+  font-weight: 800;
+}
+.donors_items {
+}
+.donors_items_row {
+  display: flex;
+  gap: 30px;
+}
+.donors_item {
+  flex: 1;
+  margin-top: 70px;
+  padding: 30px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+}
+.donors_item_badge {
+  margin: auto;
+  margin-bottom: 30px;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 46px;
+  font-weight: 800;
+  border-radius: 50%;
+  text-transform: uppercase;
+  background-color: #71c100;
+  color: #fff;
+}
+.donors_item b {
+  display: block;
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 800;
+}
+.donors_item b em {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+}
+.donors_item span {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #999;
+}
+.donors_item span em {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  color: #00a669;
+}
 /* ########## Section - Help ########## */
 /* ########## Section - Happening ########## */
 /* ########## Footer ########## */
