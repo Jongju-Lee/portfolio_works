@@ -50,6 +50,15 @@ body {
 .color_deep_green {
   color: #00a669;
 }
+.heading h2 {
+  font-size: 60px;
+  font-weight: 800;
+}
+.heading h2 span {
+  font-size: 64px;
+  font-weight: 400;
+  font-family: "Architects Daughter", cursive;
+}
 .btn_normal {
   display: inline-block;
   padding: 20px 40px;
@@ -291,30 +300,21 @@ section.campaign > * {
   left: 0;
   transform: rotate(15deg);
 }
-.change_heading h2 {
-  font-size: 60px;
-  font-weight: 800;
-}
-.change_heading h2 span {
-  font-family: "Architects Daughter", cursive;
-  font-size: 64px;
-  font-weight: 400;
-}
-.change_heading :is(p, span) {
+.campaign_heading :is(p, span) {
   font-size: 17px;
 }
-.change_heading p {
+.campaign_heading p {
   margin-top: 30px;
   line-height: 1.5em;
 }
-.change_heading .detail {
+.campaign_heading .detail {
   line-height: 2.5em;
   margin-top: 30px;
 }
-.change_heading .detail span {
+.campaign_heading .detail span {
   display: block;
 }
-.change_heading .detail span::before {
+.campaign_heading .detail span::before {
   content: "\F26B";
   font-family: "bootstrap-icons";
   display: inline-block;
@@ -323,13 +323,13 @@ section.campaign > * {
   font-size: 22px;
   margin-right: 5px;
 }
-.change_heading .btn_normal {
+.campaign_heading .btn_normal {
   margin-top: 30px;
   background-color: #14d1bb;
   color: #fff;
   transition: 0.35s;
 }
-.change_heading .btn_normal:hover {
+.campaign_heading .btn_normal:hover {
   background-color: #9fdcf0;
   color: #333;
 }
@@ -450,8 +450,172 @@ section.focus {
 }
 /* ########## Section - Change ########## */
 section.change {
+  display: flex;
+  background: url(../image/home-9.jpg) no-repeat center center / cover;
+}
+section.change > * {
+  flex: 1;
+}
+.change_heading_outer {
+  position: relative;
+}
+.change_heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.change_heading h2 {
+  color: #fff;
+}
+.change_heading h2 span {
+  color: #333356;
+}
+.change_heading p {
+  margin-top: 35px;
+}
+.change_heading .btn_normal {
+  margin-top: 35px;
+  background-color: #333356;
+  color: #fff;
+}
+.change_heading .btn_normal:hover {
+  transition: 0.35s;
+  background-color: #00a669;
+}
+.change_photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
 }
 /* ########## Section - Join ########## */
+section.join {
+  padding: 120px 0;
+  background: #333356 url(../image/pattern-footer.png);
+}
+section.join .heading {
+  width: 700px;
+  margin: auto;
+  text-align: center;
+}
+section.join .heading h2 {
+  color: #9fdcf0;
+}
+section.join .heading h2 span {
+  color: #fff;
+}
+.join_items {
+  margin-top: 70px;
+}
+.join_items .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.join_item {
+  flex: 1;
+  height: 670px;
+}
+.join_item .photo {
+  width: 100%;
+  height: 200px;
+}
+.join_item .photo img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+.join_item .desc {
+  position: relative;
+  background-color: #fff;
+  height: calc(100% - 200px);
+  padding: 35px;
+  border-radius: 0 0 10px 10px;
+}
+.join_item .desc h4 {
+  font-size: 30px;
+  font-weight: 800;
+}
+.join_item .desc p {
+  font-size: 17px;
+  margin-top: 20px;
+  line-height: 1.7em;
+}
+.join_item_desc_bottom {
+  position: absolute;
+  left: 35px;
+  bottom: 35px;
+  width: calc(100% - 70px);
+}
+.progress_bar_outer {
+  margin-top: 30px;
+  padding: 10px 0;
+}
+.progress_bar {
+  position: relative;
+  background-color: #e8eaf3;
+  height: 20px;
+  border-radius: 20px;
+}
+.progress_bar::after {
+  content: "";
+  position: absolute;
+  background-color: #00a669;
+  height: 100%;
+  border-radius: 20px;
+}
+.progress_bar.first::after {
+  width: 44%;
+}
+.progress_bar.second::after {
+  width: 82%;
+}
+.progress_bar.third::after {
+  width: 46%;
+}
+.progress_bar.fourth::after {
+  width: 65%;
+}
+.progress_bar.fifth::after {
+  width: 60%;
+}
+.progress_bar.sixth::after {
+  width: 25%;
+}
+.join_item .current {
+  display: flex;
+  justify-content: space-between;
+}
+.join_item .current span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #999;
+  margin-top: 20px;
+}
+.join_item .current span b {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+section.join .inner .btn_wrapper {
+  text-align: center;
+  margin-top: 80px;
+}
+section.join .inner .btn_wrapper .btn_normal {
+  background-color: #14d1bb;
+  color: #fff;
+  transition: 0.35s;
+}
+section.join .inner .btn_wrapper .btn_normal:hover {
+  background-color: #dbf072;
+  color: #333;
+}
 /* ########## Section - Total ########## */
 /* ########## Section - Donations ########## */
 /* ########## Section - Help ########## */
