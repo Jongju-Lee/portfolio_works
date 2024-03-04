@@ -42,6 +42,7 @@ body {
 }
 .inner {
   width: 1200px;
+  margin: auto;
 }
 .color_green {
   color: #6fbc03;
@@ -55,6 +56,17 @@ body {
   font-size: 17px;
   font-weight: 800;
   border-radius: 5px;
+}
+.badge {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background-color: #71c100;
+  color: #fff;
 }
 /* ########## Header ########## */
 header {
@@ -122,14 +134,15 @@ h4.lnb_title::after {
   opacity: 0;
   visibility: hidden;
   transition: 0.35s;
+  text-align: left;
 }
 .lnb li:hover .lnb_content {
   opacity: 1;
   visibility: visible;
 }
 .lnb_content li a {
-  display: inline-block;
-  padding: 10px 0;
+  display: block;
+  padding: 10px;
   line-height: 1.8em;
   transition: 0.35s;
   font-weight: 500;
@@ -236,9 +249,208 @@ section.intro .overlay {
   color: #333;
 }
 /* ########## Section - Campaign ########## */
-
+section.campaign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+section.campaign > * {
+  width: 750px;
+  padding: 0 30px;
+}
+.campaign_photo {
+  position: relative;
+  height: 800px;
+}
+.campaign_photo img {
+  position: absolute;
+  border-radius: 10px;
+}
+.campaign_photo img:nth-child(1) {
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+.campaign_photo img:nth-child(2) {
+  max-width: 350px;
+  top: 5%;
+  left: 0;
+  transform: rotate(-10deg);
+}
+.campaign_photo img:nth-child(3) {
+  max-width: 450px;
+  top: 15%;
+  right: 100px;
+  transform: rotate(-2deg);
+}
+.campaign_photo img:nth-child(4) {
+  max-width: 300px;
+  bottom: -5%;
+  left: 0;
+  transform: rotate(15deg);
+}
+.change_heading h2 {
+  font-size: 60px;
+  font-weight: 800;
+}
+.change_heading h2 span {
+  font-family: "Architects Daughter", cursive;
+  font-size: 64px;
+  font-weight: 400;
+}
+.change_heading :is(p, span) {
+  font-size: 17px;
+}
+.change_heading p {
+  margin-top: 30px;
+  line-height: 1.5em;
+}
+.change_heading .detail {
+  line-height: 2.5em;
+  margin-top: 30px;
+}
+.change_heading .detail span {
+  display: block;
+}
+.change_heading .detail span::before {
+  content: "\F26B";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(5px);
+  color: #a2ddf0;
+  font-size: 22px;
+  margin-right: 5px;
+}
+.change_heading .btn_normal {
+  margin-top: 30px;
+  background-color: #14d1bb;
+  color: #fff;
+  transition: 0.35s;
+}
+.change_heading .btn_normal:hover {
+  background-color: #9fdcf0;
+  color: #333;
+}
 /* ########## Section - Focus ########## */
+section.focus {
+  padding-bottom: 100px;
+  text-align: center;
+}
+.focus_heading {
+  width: 800px;
+  margin: auto;
+}
+.focus_heading h2 {
+  margin-top: 40px;
+  font-size: 46px;
+  font-weight: 800;
+}
+.focus_heading p {
+  margin-top: 30px;
+  font-size: 17px;
+  line-height: 1.5em;
+}
+.focus_items {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+}
+.focus_item {
+  flex: 1;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 380px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.35s;
+}
+.focus_item:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+.focus_item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.focus_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.focus_item :is(span, a) {
+  position: absolute;
+  z-index: 10;
+}
+.focus_item_icon {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+}
+.focus_item:nth-child(1) .focus_item_icon {
+  background-color: #14d1bb;
+  padding-left: 5px;
+}
+.focus_item:nth-child(2) .focus_item_icon {
+  background-color: #00a669;
+  padding-left: 1px;
+}
+.focus_item:nth-child(3) .focus_item_icon {
+  background-color: #71c100;
+  padding-left: 4px;
+}
+.focus_item:nth-child(4) .focus_item_icon {
+  background-color: #9fdcf0;
+  padding-left: 1px;
+}
+.focus_item_title,
+.focus_item_more {
+  left: 50%;
+  font-weight: 800;
+  color: #fff;
+  transition: 0.35s;
+}
+.focus_item_title:hover,
+.focus_item_more:hover {
+  opacity: 0.7;
+}
+.focus_item_title {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+  font-size: 22px;
+  line-height: 1.5em;
+}
+.focus_item_more {
+  bottom: 25px;
+  transform: translateX(-50%);
+  font-size: 17px;
+}
+.focus_item_more::after {
+  content: "\F1BE";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(5px);
+  font-size: 20px;
+  margin-left: 5px;
+}
 /* ########## Section - Change ########## */
+section.change {
+}
 /* ########## Section - Join ########## */
 /* ########## Section - Total ########## */
 /* ########## Section - Donations ########## */
