@@ -7,7 +7,30 @@ $(function () {
       $(".btn_top").removeClass("active");
     }
   });
+  /* ##### Search Modal ##### */
+  $(".search_icon").click(function () {
+    $(".search_modal").stop().fadeIn();
+    $(".trigger_outer").stop().fadeOut();
+  });
+  $(
+    "section, .search_modal_icon, .search_modal_btn_close, .search_modal_btn_close_mobile"
+  ).click(function () {
+    $(".search_modal").stop().fadeOut();
+  });
+  /* ##### Search Modal Mobile Close Button ##### */
+  $(".search_modal_btn_close_mobile").click(function () {
+    $(".trigger_outer").stop().fadeIn();
+  });
+  /* ##### Mobile Trigger Button ##### */
+  $(".trigger_outer").click(function () {
+    $(this).toggleClass("active");
+    $(".mobile_lnb_outer").toggleClass("active");
+  });
+  $(".mobile_lnb a").click(function () {
+    $(".mobile_lnb_outer").removeClass("active");
+  });
   /* ##### Section - Donations ##### */
+  // Java Script
   const $donateInput = document.querySelector(".donate_input");
   const $firstBtn = document.querySelector(".btn_first");
   const $secondBtn = document.querySelector(".btn_second");
