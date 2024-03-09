@@ -1,0 +1,357 @@
+/* Import Local CSS */
+@import url(../css/reset.css);
+@import url(../css/variables.css);
+
+* {
+  font-family: var(--primaryKr);
+}
+body {
+  margin: 0;
+  color: var(--darkBlack);
+  line-height: 1.5em;
+  font-size: 14px;
+}
+/* ##### Common CSS ##### */
+/* Layout CSS */
+.container {
+  width: var(--slideBasis);
+  position: relative;
+  padding-bottom: 65px;
+}
+.preloading,
+.login {
+  height: 100vh;
+}
+/* Header CSS */
+:is(.login, .register, .cart) header {
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+:is(.login, .register, .cart) header .btn_back {
+  background-color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 0;
+}
+:is(.login, .register, .cart) header .btn_home {
+  font-size: 22px;
+}
+/* Button CSS */
+
+/* GNB CSS */
+
+/* ########## Login ########## */
+.container.login {
+  width: var(--slideBasis);
+}
+/* ##### Login - Section ##### */
+.login section {
+  padding: 30px 20px;
+  font-size: 15px;
+}
+.login_heading {
+  text-align: center;
+}
+.login_heading p {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.login_heading p b {
+  font-weight: 700;
+}
+.login_heading .kakao {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  background-color: #fae100;
+}
+.login_heading .kakao span::before {
+  content: "\F24B";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(2px);
+  margin-right: 5px;
+}
+.login_form {
+  margin-top: 30px;
+}
+.login_form input {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid var(--cloudyGray);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  font-size: 15px;
+}
+.login_form input::placeholder {
+  color: var(--sliverGray);
+  transition: 0.35s;
+}
+.login_form input:focus::placeholder {
+  opacity: 0;
+}
+.login_check_field {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.login_check_field input {
+  display: none;
+}
+.login_check_field label {
+  cursor: pointer;
+  font-size: 15px;
+}
+.login_check_field label::before {
+  content: "\F26B";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(3px);
+  margin-right: 5px;
+  color: var(--lightGray);
+  transition: 0.35s;
+  font-size: 18px;
+}
+.login_check_field input:checked + label::before {
+  content: "\F26A";
+  color: var(--dodgerBlue);
+}
+.login_form :is(.btn_login, .btn_sign_up) {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.login_form .btn_login {
+  width: 100%;
+  border: none;
+  background-color: var(--dodgerBlue);
+  color: #fff;
+}
+.login_form .btn_sign_up {
+  text-align: center;
+  background-color: var(--aliceBlue);
+  color: var(--dodgerBlue);
+}
+.login_form .forgot {
+  display: flex;
+  justify-content: center;
+  color: var(--darkGray);
+  font-size: 15px;
+}
+.login_form .forgot a:first-child::after {
+  content: "|";
+  font-size: 15px;
+  margin: 0 10px;
+}
+/* ##### Login - Footer ##### */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+footer nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+footer nav a {
+  flex: 1;
+  text-align: center;
+  color: var(--lightGray);
+}
+footer nav a i {
+  font-size: 22px;
+}
+footer nav a:first-child i {
+  font-size: 25px;
+}
+/* ########## Register ########## */
+/* ##### Register - Section ##### */
+.register section {
+  padding: 20px;
+}
+form.sign_up {
+  font-size: 15px;
+}
+.sign_up button {
+}
+.sign_up .input_field {
+  margin-bottom: 30px;
+}
+.sign_up .input_field b,
+.sign_up .phone b,
+.sign_up .gender b {
+  display: block;
+  margin-bottom: 5px;
+}
+.sign_up .input_field b::after,
+.sign_up .phone b::after,
+.sign_up .gender b::after {
+  content: "*";
+  color: crimson;
+  margin-left: 3px;
+}
+.sign_up .input_field input {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid var(--cloudyGray);
+  border-radius: 5px;
+  padding: 0 15px;
+  font-size: 15px;
+}
+.sign_up .input_field span {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--lightGray);
+}
+.sign_up .input_field .post {
+  display: flex;
+  gap: 10px;
+}
+.sign_up .input_field.address input {
+  margin-bottom: 10px;
+}
+.sign_up .input_field .post input {
+  flex: 3;
+}
+.sign_up .input_field .post .btn_address {
+  flex: 1;
+  height: 45px;
+  border: none;
+  border: 1px solid var(--dodgerBlue);
+  background-color: #fff;
+  color: var(--dodgerBlue);
+  border-radius: 5px;
+  font-size: 15px;
+}
+.sign_up .phone {
+  margin-bottom: 30px;
+}
+.sign_up .phone_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sign_up .phone_inner :is(select, input, .btn_code) {
+  width: 70px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 15px;
+  border: 1px solid var(--cloudyGray);
+  border-radius: 5px;
+}
+.sign_up .phone_inner :is(select, input) {
+  padding-left: 15px;
+}
+.sign_up .phone_inner select {
+}
+.sign_up .phone_inner i {
+  display: inline-block;
+  transform: translateY(2px);
+  color: var(--lightBlack);
+}
+.sign_up .phone_inner input {
+}
+.sign_up .phone_inner .btn_code {
+  border-color: var(--dodgerBlue);
+  background-color: #fff;
+  color: var(--dodgerBlue);
+  margin-left: 5px;
+}
+.sign_up .gender {
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--cloudyGray);
+}
+.sign_up .gender input {
+  display: none;
+}
+.sign_up .gender label {
+  color: var(--lightBlack);
+  margin-right: 30px;
+}
+.sign_up .gender label::before {
+  content: "\F28A";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(2px);
+  margin-right: 5px;
+}
+.sign_up .gender input:checked + label::before {
+  content: "\F518";
+  color: var(--dodgerBlue);
+}
+.sign_up .agree {
+  margin-top: 30px;
+  font-size: 12px;
+}
+.sign_up .agree span {
+  display: block;
+  margin-bottom: 10px;
+}
+.sign_up .agree input {
+  display: none;
+}
+.sign_up .agree label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--lightBlack);
+}
+.sign_up .agree label[for="agree_all"] {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--darkBlack);
+  font-size: 14px;
+}
+.sign_up .agree label::before {
+  content: "\F26B";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(3px);
+  margin-right: 5px;
+  color: var(--lightGray);
+  font-weight: 400;
+  font-size: 14px;
+}
+.sign_up .agree input:checked + label::before {
+  content: "\F26A";
+  color: var(--dodgerBlue);
+}
+.sign_up .agree em {
+  display: inline-block;
+  font-style: normal;
+  margin-bottom: 15px;
+  color: var(--lightGray);
+}
+.sign_up .agree p {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--lightGray);
+}
+.sign_up .agree p a {
+  text-decoration: underline;
+}
+.sign_up .btn_sign_up {
+  width: 100%;
+  height: 45px;
+  background-color: var(--dodgerBlue);
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+}
