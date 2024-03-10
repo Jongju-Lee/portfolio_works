@@ -27,20 +27,20 @@
         <form class="sign_up" action="">
           <div class="input_field">
             <b>이메일</b>
-            <input type="text" />
+            <input type="text" required />
             <span>로그인 아이디로 사용할 이메일을 입력해 주세요.</span>
           </div>
           <div class="input_field">
             <b>비밀번호</b>
-            <input type="text" />
+            <input type="password" required />
           </div>
           <div class="input_field">
             <b>비밀번호 확인</b>
-            <input type="text" />
+            <input type="password" required />
           </div>
           <div class="input_field">
             <b>이름</b>
-            <input type="text" />
+            <input type="text" required />
           </div>
           <div class="input_field address">
             <b>주소</b>
@@ -75,27 +75,27 @@
             <label for="man">남자</label>
             <input type="radio" name="gender" id="woman" />
             <label for="woman">여자</label>
-            <input type="radio" name="gender" id="not" />
+            <input type="radio" name="gender" id="not" checked />
             <label for="not">선택안함</label>
           </div>
           <div class="agree">
             <span>이용약관동의</span>
-            <input type="checkbox" id="agree_all" />
-            <label for="agree_all"> 전체 동의합니다</label>
+            <input type="checkbox" name="agree" id="agree_all" />
+            <label for="agree_all">전체 동의합니다</label>
             <em>
               선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를
               이용할 수 있습니다.
             </em>
-            <input type="checkbox" id="terms_agree" />
+            <input type="checkbox" id="terms_agree" name="agree" />
             <label for="terms_agree"> [필수] 이용약관 동의 </label>
-            <input type="checkbox" id="info_agree" />
+            <input type="checkbox" id="info_agree" name="agree" />
             <label for="info_agree"> [필수] 개인정보 수집 및 이용 동의 </label>
-            <input type="checkbox" id="sms" />
+            <input type="checkbox" id="sms" name="agree" />
             <label for="sms">
               [선택] SMS (문자, 카카오톡 등)으로 혜택과 유용한 정보를 보내드려도
               될까요?
             </label>
-            <input type="checkbox" id="email" />
+            <input type="checkbox" id="email" name="agree" />
             <label for="email">
               [선택] 이메일로 혜택과 정보를 보내드려도 될까요?
             </label>
