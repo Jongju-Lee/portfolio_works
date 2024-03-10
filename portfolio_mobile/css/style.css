@@ -17,19 +17,20 @@ body {
   width: var(--slideBasis);
   position: relative;
   padding-bottom: 65px;
-}
-.preloading,
-.login {
-  height: 100vh;
+  min-height: 780px;
 }
 /* Header CSS */
-:is(.login, .register, .cart) header {
+header {
   padding: 0 20px;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+/* Header CSS - Login, Register, Cart */
+:is(.login, .register, .cart) header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 :is(.login, .register, .cart) header .btn_back {
   background-color: #fff;
@@ -39,6 +40,64 @@ body {
 }
 :is(.login, .register, .cart) header .btn_home {
   font-size: 22px;
+}
+/* Header CSS - Login, Register, Cart */
+:is(.main, .category, .search, .wish_list, .my_page) header {
+  background-color: var(--dodgerBlue);
+  color: #fff;
+}
+:is(.main, .category, .search, .wish_list, .my_page) header .logo {
+  width: 28px;
+  height: 28px;
+}
+:is(.main, .category, .search, .wish_list, .my_page) header .logo img {
+  width: inherit;
+  height: inherit;
+}
+:is(.main, .category, .search, .wish_list, .my_page) header .cart {
+  position: relative;
+  font-size: 25px;
+}
+/* Footer CSS */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+footer nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+footer nav a {
+  flex: 1;
+  text-align: center;
+  color: var(--lightGray);
+}
+footer nav a i {
+  font-size: 22px;
+}
+footer nav a:first-child i {
+  font-size: 25px;
+}
+:is(.main, .category, .search, .wish_list, .my_page) header .cart::after {
+  content: attr(data-count);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  background-color: var(--red);
+  border-radius: 5px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* Button CSS */
 
@@ -153,34 +212,8 @@ body {
   font-size: 15px;
   margin: 0 10px;
 }
-/* ##### Login - Footer ##### */
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 65px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-footer nav {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-footer nav a {
-  flex: 1;
-  text-align: center;
-  color: var(--lightGray);
-}
-footer nav a i {
-  font-size: 22px;
-}
-footer nav a:first-child i {
-  font-size: 25px;
-}
+
 /* ########## Register ########## */
-/* ##### Register - Section ##### */
 .register section {
   padding: 20px;
 }
@@ -265,8 +298,6 @@ form.sign_up {
   display: inline-block;
   transform: translateY(2px);
   color: var(--lightBlack);
-}
-.sign_up .phone_inner input {
 }
 .sign_up .phone_inner .btn_code {
   border-color: var(--dodgerBlue);
@@ -354,4 +385,78 @@ form.sign_up {
   border: none;
   font-size: 15px;
   border-radius: 5px;
+}
+/* ########## Category ########## */
+.category section {
+  font-size: 16px;
+}
+.category input {
+  display: none;
+}
+.category :is(.view_all, .electronics),
+.category label {
+  display: block;
+  position: relative;
+  height: 50px;
+  border-bottom: 1px solid var(--cloudyGray);
+  line-height: 50px;
+  padding-left: 60px;
+  font-size: 16px;
+  color: var(--darkBlack);
+}
+.category label::after {
+  content: "\F282";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-weight: 700;
+  color: var(--lightGray);
+  transition: 0.35s;
+}
+.category input:checked + label::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.category input:checked + label span {
+  color: var(--dodgerBlue);
+}
+.category :is(.view_all, .electronics) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.category :is(.view_all, .electronics) img,
+.category label img {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) saturate(100%) invert(92%) sepia(11%) saturate(0%)
+    hue-rotate(183deg) brightness(86%) contrast(75%);
+}
+.category input:checked + label img {
+  filter: brightness(0) saturate(100%) invert(32%) sepia(48%) saturate(2936%)
+    hue-rotate(194deg) brightness(95%) contrast(105%);
+}
+.category :is(.view_all, .electronics) span {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+}
+.category .accordion_content {
+  background-color: var(--ghostWhite);
+  font-size: 15px;
+  display: none;
+}
+.category .accordion_content a {
+  display: block;
+  padding: 7px;
+  padding-left: 70px;
+}
+.category input:checked + label + .accordion_content {
+  display: block;
 }
