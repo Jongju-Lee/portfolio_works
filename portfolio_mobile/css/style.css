@@ -99,6 +99,38 @@ footer nav a:first-child i {
   justify-content: center;
   align-items: center;
 }
+/* Badge CSS */
+.badge {
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #fff;
+}
+.badge.blue {
+  background-color: var(--dodgerBlue);
+}
+.badge.gold {
+  background-color: var(--gold);
+}
+.badge em {
+  font-style: normal;
+}
+/* Star Rating */
+.star_rating {
+  margin-top: 3px;
+  color: var(--lightBlack);
+  font-size: 13px;
+}
+.star_rating::before {
+  content: "\F586";
+  font-family: "bootstrap-icons";
+  display: inline-block;
+  transform: translateY(2px);
+  color: var(--gold);
+}
+.star_rating em {
+  font-style: normal;
+}
 /* Button CSS */
 
 /* GNB CSS */
@@ -459,4 +491,172 @@ form.sign_up {
 }
 .category input:checked + label + .accordion_content {
   display: block;
+}
+.category footer nav a:first-child {
+  filter: brightness(0) saturate(100%) invert(32%) sepia(48%) saturate(2936%)
+    hue-rotate(194deg) brightness(95%) contrast(105%);
+}
+/* ########## Search ########## */
+.search section {
+  padding: 20px;
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+.search_field {
+  display: flex;
+}
+.search_field input,
+.btn_search {
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  border: none;
+}
+.search_field input {
+  flex: 5;
+  padding-left: 20px;
+  background-color: var(--ghostWhite);
+  border-radius: 20px 0 0 20px;
+}
+.search_field input:focus::placeholder {
+  opacity: 0;
+}
+.btn_search {
+  flex: 1;
+  background-color: var(--dodgerBlue);
+  color: #fff;
+  border-radius: 0 20px 20px 0;
+  padding-right: 10px;
+}
+.search_recent_word {
+  margin-top: 30px;
+}
+.recent_word_items {
+  margin-top: 15px;
+}
+.recent_word_items a {
+  display: block;
+  width: fit-content;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--dodgerBlue);
+  background-color: var(--aliceBlue);
+  border-radius: 5px;
+}
+.recent_word_items a i {
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 5px;
+  transform: translateY(2px);
+}
+.search_keyword {
+  margin-top: 30px;
+}
+.search_keyword b {
+  display: block;
+  margin-bottom: 15px;
+}
+.search_keyword a {
+  background-color: var(--aliceBlue);
+  color: var(--dodgerBlue);
+  font-size: 14px;
+  margin-right: 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+.search_keyword a img {
+  width: 18px;
+  height: 18px;
+  transform: translateY(3px);
+  filter: brightness(0) saturate(100%) invert(32%) sepia(48%) saturate(2936%)
+    hue-rotate(194deg) brightness(95%) contrast(105%);
+}
+.search_keyword a span {
+  margin-left: 3px;
+}
+.search_hot {
+  margin-top: 30px;
+}
+.search_hot_items {
+  display: flex;
+  margin-top: 15px;
+}
+.search_hot_item {
+  flex: 1;
+}
+.search_hot_item:nth-child(1) {
+  counter-reset: left 0;
+}
+.search_hot_item:nth-child(2) {
+  counter-reset: right 4;
+}
+.search_hot_item a {
+  display: block;
+  margin-bottom: 12px;
+}
+.search_hot_item:nth-child(1) a::before,
+.search_hot_item:nth-child(2) a::before {
+  color: var(--dodgerBlue);
+  font-weight: 700;
+  margin-right: 10px;
+}
+.search_hot_item:nth-child(1) a::before {
+  content: counter(left);
+  counter-increment: left;
+}
+.search_hot_item:nth-child(2) a::before {
+  content: counter(right);
+  counter-increment: right;
+}
+.search_recent {
+  margin-top: 30px;
+}
+.search_recent_items {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.search_recent_item {
+  width: calc(50% - 10px);
+}
+.search_recent_item_thum {
+  width: 100%;
+  height: 150px;
+}
+.search_recent_item_thum a {
+  width: inherit;
+  height: inherit;
+}
+.search_recent_item_thum a > img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.search_recent_item_desc {
+}
+.search_recent_item_desc p {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 13px;
+}
+.search_recent_item_desc p span {
+  display: block;
+}
+.search_recent_item_desc :is(s, b) {
+  display: block;
+}
+.search_recent_item_desc s {
+  font-size: 12px;
+  color: var(--lightGray);
+}
+.search_recent_item_desc b {
+  color: var(--dodgerBlue);
+  margin-bottom: 3px;
+}
+.search_keyword .search footer nav a:nth-child(2) {
+  filter: brightness(0) saturate(100%) invert(32%) sepia(48%) saturate(2936%)
+    hue-rotate(194deg) brightness(95%) contrast(105%);
 }
