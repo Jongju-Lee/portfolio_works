@@ -217,7 +217,12 @@ footer nav a:first-child i {
   font-style: normal;
 }
 /* Button CSS */
-
+.btn_small_primary {
+  border: 1px solid var(--dodgerBlue);
+  color: var(--dodgerBlue);
+  background-color: #fff;
+  border-radius: 5px;
+}
 /* GNB CSS */
 
 /* ########## Login ########## */
@@ -383,10 +388,6 @@ form.sign_up {
 .sign_up .input_field .post .btn_address {
   flex: 1;
   height: 45px;
-  border: none;
-  border: 1px solid var(--dodgerBlue);
-  background-color: #fff;
-  color: var(--dodgerBlue);
   border-radius: 5px;
   font-size: 15px;
 }
@@ -403,11 +404,11 @@ form.sign_up {
   height: 45px;
   line-height: 45px;
   font-size: 15px;
-  border: 1px solid var(--cloudyGray);
   border-radius: 5px;
 }
 .sign_up .phone_inner :is(select, input) {
   padding-left: 15px;
+  border: 1px solid var(--cloudyGray);
 }
 .sign_up .phone_inner select {
 }
@@ -417,9 +418,6 @@ form.sign_up {
   color: var(--lightBlack);
 }
 .sign_up .phone_inner .btn_code {
-  border-color: var(--dodgerBlue);
-  background-color: #fff;
-  color: var(--dodgerBlue);
   margin-left: 5px;
 }
 .sign_up .gender {
@@ -515,7 +513,7 @@ form.sign_up {
   display: block;
   position: relative;
   height: 50px;
-  border-bottom: 1px solid var(--cloudyGray);
+  border-bottom: 1px solid var(--whiteSmoke);
   line-height: 50px;
   padding-left: 60px;
   font-size: 16px;
@@ -757,4 +755,145 @@ form.sign_up {
 }
 .wish_hot {
   margin-top: 30px;
+}
+/* ########## My Page ########## */
+.my_page section {
+  padding: 20px;
+  padding-bottom: 30px;
+}
+.my_page .user_info {
+}
+.my_page .welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my_page .welcome p {
+  margin: 0;
+  font-size: 15px;
+}
+.my_page .welcome p span {
+  font-weight: 700;
+}
+.my_page .welcome .btn_edit {
+  padding: 3px 8px;
+}
+.my_page .benefit {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  background-color: var(--ghostWhite);
+  font-size: 15px;
+  padding: 15px 0;
+}
+.my_page .benefit::after {
+  content: "|";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-family: "Pretendard-Thin";
+  color: var(--sliverGray);
+}
+.my_page .benefit > * {
+  flex: 1;
+  text-align: center;
+}
+.my_page .benefit_point span,
+.my_page .benefit_coupon span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--darkGray);
+}
+.my_page .benefit_point b,
+.my_page .benefit_coupon b {
+  color: var(--dodgerBlue);
+  font-weight: 700;
+}
+.my_page .delivery {
+  margin-top: 30px;
+  font-size: 15px;
+}
+.my_page .delivery_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my_page .delivery_title span {
+  font-weight: 700;
+}
+.my_page .delivery_title span em {
+  font-weight: 400;
+  font-size: 13px;
+  font-style: normal;
+  color: var(--lightGray);
+}
+.my_page .delivery_title a {
+  padding: 3px 8px;
+}
+.my_page .delivery_status {
+  padding: 15px 20px;
+  margin-top: 10px;
+  background-color: var(--ghostWhite);
+}
+.my_page .delivery_status_items {
+  display: flex;
+}
+.my_page .delivery_status_item {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  color: var(--lightGray);
+}
+.my_page .delivery_status_item b {
+  display: block;
+  font-size: 16px;
+  color: var(--darkBlack);
+}
+.my_page .delivery_status_items i {
+  transform: translateY(10px);
+  color: var(--darkGray);
+}
+.my_page .delivery_info {
+  margin: 30px 0;
+  padding: 30px 0;
+  border-top: 1px solid var(--whiteSmoke);
+  border-bottom: 1px solid var(--whiteSmoke);
+  font-size: 15px;
+}
+.my_page :is(.delivery_info, .setting) span {
+  display: block;
+  color: var(--lightGray);
+  margin-bottom: 15px;
+}
+.my_page .delivery_info :is(.tracking, .cancel_detail),
+.my_page .setting :is(.btn_setting, .btn_logout) {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+}
+.my_page .setting {
+  font-size: 15px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--whiteSmoke);
+}
+.my_page .setting .btn_logout {
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+}
+.my_page .setting .twin_btn {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.my_page .setting .twin_btn a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--sliverGray);
 }
