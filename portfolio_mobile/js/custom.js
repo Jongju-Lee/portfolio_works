@@ -12,4 +12,10 @@ $(function () {
       $("input[name=agree]").prop("checked", false);
     }
   });
+  /* ########## Slick.js ########## */
+  $(".product_slider").slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+  });
 });
