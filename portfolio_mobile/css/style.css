@@ -16,31 +16,37 @@ body {
 .container {
   width: var(--slideBasis);
   position: relative;
+  padding-top: 60px;
   padding-bottom: 65px;
   min-height: 780px;
   overflow-x: hidden;
 }
 /* Header CSS */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--slideBasis);
   padding: 0 20px;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 /* Header CSS - Login, Register, Cart */
-:is(.login, .register, .cart) header {
+:is(.login, .register, .cart, .details) header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
-:is(.login, .register, .cart) header .btn_back {
+:is(.login, .register, .cart, .details) header .btn_back {
   background-color: #fff;
   border: none;
   font-size: 22px;
   padding: 0;
 }
-:is(.login, .register, .cart) header .btn_home {
-  font-size: 22px;
+:is(.login, .register, .cart, .details) header .btn_home {
+  font-size: 25px;
 }
 /* Header CSS - Login, Register, Cart */
 :is(.main, .category, .search, .wish_list, .my_page) header {
@@ -55,11 +61,13 @@ header {
   width: inherit;
   height: inherit;
 }
-:is(.main, .category, .search, .wish_list, .my_page) header .cart {
+:is(.main, .category, .search, .wish_list, .my_page, .details) header .cart {
   position: relative;
   font-size: 25px;
 }
-:is(.main, .category, .search, .wish_list, .my_page) header .cart::after {
+:is(.main, .category, .search, .wish_list, .my_page, .details)
+  header
+  .cart::after {
   content: attr(data-count);
   position: absolute;
   top: -8px;
@@ -73,6 +81,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.details header .cart {
+  margin-left: 20px;
+}
+.details header .cart::after {
+  color: #fff;
 }
 /* Footer CSS */
 footer {
@@ -1101,4 +1115,159 @@ form.sign_up {
   border: none;
   background-color: var(--dodgerBlue);
   color: #fff;
+}
+/* ########## Details ##########  */
+.details section {
+  padding-bottom: 15px;
+}
+.product_title {
+}
+.product_title_thum {
+  width: 100%;
+  height: 100%;
+}
+.product_title_thum img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product_title_desc {
+  position: relative;
+  padding: 30px 20px;
+}
+.product_title_desc p {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.7em;
+}
+.product_title_desc p span {
+  display: block;
+}
+.product_title_desc > span {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.product_title_desc s {
+  display: block;
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--lightGray);
+}
+.product_title_desc b {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dodgerBlue);
+}
+.product_title_desc .subscribe {
+  display: block;
+  margin-top: 50px;
+  margin-left: -20px;
+  width: calc(100% + 40px);
+  background-color: var(--aliceBlue);
+  padding: 15px 20px;
+  font-size: 16px;
+}
+.product_title_desc .subscribe span {
+  color: var(--dodgerBlue);
+  font-weight: 700;
+}
+.product_title_desc .subscribe i {
+  color: var(--dodgerBlue);
+  transform: translateY(2px);
+  font-size: 20px;
+  float: right;
+}
+.product_title_btn_wrapper {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+.product_title_btn_wrapper .heart::before {
+  content: "\F417";
+  font-family: "bootstrap-icons";
+  font-size: 25px;
+  color: var(--lightGray);
+}
+.product_title_btn_wrapper .heart.active::before {
+  content: "\F415";
+  color: var(--crimson);
+}
+.product_title_btn_wrapper .share i {
+  font-size: 20px;
+  display: inline-block;
+  transform: translateY(-1px);
+}
+.product_detail_desc {
+  margin-top: 100px;
+}
+.product_detail_desc h2 {
+  font-size: 18px;
+  text-align: center;
+  margin: 50px 0;
+}
+.details_accordion {
+  border-top: 1px solid var(--whiteSmoke);
+  padding-top: 30px;
+}
+.details_accordion input {
+  display: none;
+}
+.details_accordion label {
+  display: block;
+  padding: 12px 20px;
+  font-size: 15px;
+}
+.details_accordion label i {
+  float: right;
+  font-size: 18px;
+  transform: translateY(4px);
+}
+.details_accordion input:checked + label i {
+  transform: translateY(4px) rotate(180deg);
+}
+.details_accordion .content {
+  display: none;
+  background-color: var(--ghostWhite);
+  padding: 30px;
+  font-size: 13px;
+}
+.details_accordion input:checked + label + .content {
+  display: block;
+}
+.details_accordion .content b,
+.details_accordion .content span {
+  display: block;
+  margin-bottom: 3px;
+}
+.details_accordion .content b:nth-of-type(2) {
+  margin-top: 20px;
+}
+.details_accordion .content span::before {
+  content: "-";
+  margin-right: 3px;
+}
+.details .btn_add_cart_outer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.details .btn_add_cart {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dodgerBlue);
+  color: #fff;
+  font-size: 15px;
 }

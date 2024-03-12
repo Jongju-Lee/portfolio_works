@@ -44,7 +44,10 @@ $(function () {
       $(".empty_message").show();
     }
   });
-
+  /* ##### Details - Wish Check Function ##### */
+  $(".details .heart").click(function () {
+    $(this).toggleClass("active");
+  });
   /* ########## Slick.js ########## */
   $(".product_slider").slick({
     infinite: true,
