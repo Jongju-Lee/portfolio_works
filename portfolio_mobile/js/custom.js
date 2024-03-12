@@ -48,10 +48,23 @@ $(function () {
   $(".details .heart").click(function () {
     $(this).toggleClass("active");
   });
+  /* ##### Main - Tab Menu ##### */
+  $(".tab_menu li a").click(function () {
+    $(".tab_menu li a").removeClass("active");
+    $(this).addClass("active");
+  });
   /* ########## Slick.js ########## */
   $(".product_slider").slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 2,
+  });
+  $(".banner_slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // autoplay: true,
+    autoplaySpeed: 3000,
+    dots: true,
   });
 });

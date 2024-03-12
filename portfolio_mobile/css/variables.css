@@ -18,7 +18,7 @@
 :root {
   /* Font Family */
   --primaryKr: "Pretendard-Regular";
-  --preloadingEn: "Poppins", sans-serif;
+  --primaryEn: "Poppins", sans-serif;
 
   /* Text Color */
   --darkBlack: #333333;

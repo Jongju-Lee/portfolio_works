@@ -11,10 +11,10 @@ body {
   line-height: 1.5em;
   font-size: 14px;
 }
-/* ##### Common CSS ##### */
+/* ##### Entire Common CSS ##### */
 /* Layout CSS */
 .container {
-  width: var(--slideBasis);
+  width: 100%;
   position: relative;
   padding-top: 60px;
   padding-bottom: 65px;
@@ -26,10 +26,11 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: var(--slideBasis);
+  width: 100%;
   padding: 0 20px;
   height: 60px;
   display: flex;
+  margin-top: -1px;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
@@ -90,12 +91,14 @@ header {
 }
 /* Footer CSS */
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 65px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  z-index: 1000;
 }
 footer nav {
   width: 100%;
@@ -157,6 +160,7 @@ footer nav a:first-child i {
 .product_item_desc p span {
   display: block;
 }
+/* Product COMMON - START */
 .product_item_desc :is(s, b),
 .product_slider_item_desc :is(s, b) {
   display: block;
@@ -171,7 +175,7 @@ footer nav a:first-child i {
   color: var(--dodgerBlue);
   margin-bottom: 3px;
 }
-/* Product Slider CSS */
+/* Product COMMON - END */
 .product_slider {
   width: 420px;
   margin-top: 20px;
@@ -237,8 +241,13 @@ footer nav a:first-child i {
   background-color: #fff;
   border-radius: 5px;
 }
-/* GNB CSS */
-
+/* Slick Dots Custom CSS */
+.slick-dots {
+  bottom: 5px;
+}
+.slick-dots li button:before {
+  font-size: 10px;
+}
 /* ########## Login ########## */
 .container.login {
   width: var(--slideBasis);
@@ -1270,4 +1279,103 @@ form.sign_up {
   background-color: var(--dodgerBlue);
   color: #fff;
   font-size: 15px;
+}
+/* ########## Main ########## */
+.main header h2 {
+  font-weight: 400;
+}
+.main .tab_menu {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  height: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 1000;
+}
+.main .tab_menu li {
+  flex: 1;
+  height: inherit;
+  text-align: center;
+}
+.main .tab_menu li a {
+  display: block;
+  height: inherit;
+  font-size: 15px;
+  line-height: 50px;
+}
+.main .tab_menu li a.active {
+  font-weight: 700;
+  color: var(--dodgerBlue);
+  border-bottom: 3px solid var(--dodgerBlue);
+}
+.main .sitemap {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.main .sitemap_items {
+  padding: 0 20px;
+}
+.main .sitemap_items_row {
+  display: flex;
+}
+.main .sitemap_item {
+  flex: 1;
+  padding: 10px 0;
+}
+.main .sitemap_item a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .sitemap_item a img {
+  width: 25px;
+  filter: brightness(0) saturate(100%) invert(31%) sepia(10%) saturate(11%)
+    hue-rotate(23deg) brightness(95%) contrast(82%);
+}
+.main .sitemap_item a img.best {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(91%) saturate(1035%)
+    hue-rotate(14deg) brightness(114%) contrast(103%);
+}
+.main .sitemap_item a img.more {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(63%) saturate(5650%)
+    hue-rotate(197deg) brightness(96%) contrast(101%);
+}
+.main .sitemap_item a span {
+  display: inline-block;
+  padding-top: 5px;
+}
+.main .banner_slider {
+}
+.main .banner_slider_item {
+  width: 100%;
+  height: 180px;
+}
+.main .banner_slider_item img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+.main .feature {
+  margin: 30px 0;
+  padding: 0 20px;
+}
+.main .feature > b {
+  font-size: 18px;
+}
+.main .feature b span {
+  font-family: var(--primaryEn);
+}
+.main .feature .btn_view_more {
+  display: block;
+  margin-top: 30px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: var(--aliceBlue);
+  color: var(--dodgerBlue);
+  border-radius: 5px;
 }
