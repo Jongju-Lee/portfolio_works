@@ -34,3 +34,10 @@ h2 {
 h3 {
   font-size: 15px;
 }
+/* Select Tag Remove Arrow */
+select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

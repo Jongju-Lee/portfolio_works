@@ -30,7 +30,7 @@ header {
   padding: 0 20px;
   height: 60px;
   display: flex;
-  margin-top: -1px;
+  margin-top: -2px;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
@@ -62,13 +62,15 @@ header {
   width: inherit;
   height: inherit;
 }
-:is(.main, .category, .search, .wish_list, .my_page, .details) header .cart {
+:is(.main, .category, .search, .wish_list, .my_page, .details)
+  header
+  .header_cart {
   position: relative;
   font-size: 25px;
 }
 :is(.main, .category, .search, .wish_list, .my_page, .details)
   header
-  .cart::after {
+  .header_cart::after {
   content: attr(data-count);
   position: absolute;
   top: -8px;
@@ -83,10 +85,10 @@ header {
   justify-content: center;
   align-items: center;
 }
-.details header .cart {
+.details header .header_cart {
   margin-left: 20px;
 }
-.details header .cart::after {
+.details header .header_cart::after {
   color: #fff;
 }
 /* Footer CSS */
@@ -248,10 +250,49 @@ footer nav a:first-child i {
 .slick-dots li button:before {
   font-size: 10px;
 }
-/* ########## Login ########## */
-.container.login {
-  width: var(--slideBasis);
+/* ########## Preloading ########## */
+.preloading {
+  background-color: var(--dodgerBlue);
+  height: 100vh;
+  text-align: center;
 }
+.preloading_heading {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: #fff;
+}
+.preloading_heading h1 {
+  position: relative;
+  font-size: 60px;
+  font-weight: 600;
+  font-family: var(--primaryEn);
+  background-color: var(--dodgerBlue);
+  margin-bottom: 5px;
+  letter-spacing: 8px;
+  animation: revealTitle 2s 0.3s both;
+}
+.preloading_heading span {
+  font-size: 25px;
+}
+/* Preloading - Animation */
+@keyframes revealTitle {
+  0% {
+    color: var(--dodgerBlue);
+    margin-bottom: -40px;
+  }
+  80% {
+    letter-spacing: 0;
+    margin-bottom: -40px;
+  }
+  100% {
+    letter-spacing: 0;
+    margin-bottom: 5px;
+  }
+}
+/* ########## Login ########## */
 /* ##### Login - Section ##### */
 .login section {
   padding: 30px 20px;
@@ -434,6 +475,8 @@ form.sign_up {
   border: 1px solid var(--cloudyGray);
 }
 .sign_up .phone_inner select {
+  background: #fff url(../image/caret-down-fill.svg) no-repeat center right 10px;
+  background-size: 10px;
 }
 .sign_up .phone_inner i {
   display: inline-block;
@@ -550,7 +593,7 @@ form.sign_up {
   right: 20px;
   transform: translateY(-50%);
   font-weight: 700;
-  color: var(--lightGray);
+  color: var(--lightBlack);
   transition: 0.35s;
 }
 .category input:checked + label::after {
@@ -572,8 +615,8 @@ form.sign_up {
   transform: translateY(-50%);
   width: 22px;
   height: 22px;
-  filter: brightness(0) saturate(100%) invert(92%) sepia(11%) saturate(0%)
-    hue-rotate(183deg) brightness(86%) contrast(75%);
+  filter: brightness(0) saturate(100%) invert(31%) sepia(10%) saturate(11%)
+    hue-rotate(23deg) brightness(95%) contrast(82%);
 }
 .category input:checked + label img {
   filter: brightness(0) saturate(100%) invert(32%) sepia(48%) saturate(2936%)
@@ -588,12 +631,13 @@ form.sign_up {
 .category .accordion_content {
   background-color: var(--ghostWhite);
   font-size: 15px;
+  padding: 5px 0;
   display: none;
 }
 .category .accordion_content a {
   display: block;
-  padding: 7px;
-  padding-left: 70px;
+  padding: 10px;
+  padding-left: 75px;
 }
 .category input:checked + label + .accordion_content {
   display: block;
@@ -718,7 +762,7 @@ form.sign_up {
 .wish {
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 1px solid var(--cloudyGray);
+  border-bottom: 1px solid var(--whiteSmoke);
 }
 .wish > span {
   font-size: 14px;
@@ -765,7 +809,7 @@ form.sign_up {
   display: flex;
   gap: 10px;
 }
-.wish_item_desc .twin_btn :is(.btn_remove, .btn_cart) {
+.wish_item_desc .twin_btn :is(.btn_cart, .btn_remove) {
   flex: 1;
   padding: 7px;
   background-color: #fff;
@@ -773,11 +817,20 @@ form.sign_up {
   outline: none;
   border: 1px solid var(--darkBlack);
 }
+.wish_item_desc .twin_btn .btn_cart {
+  border: none;
+  background-color: var(--aliceBlue);
+  color: var(--dodgerBlue);
+}
 .wish_item_desc .twin_btn .btn_remove {
   border-color: var(--sliverGray);
 }
+:is(.wish_recent, .wish_hot) > b {
+  font-size: 18px;
+}
+.wish_recent,
 .wish_hot {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 /* ########## My Page ########## */
 .my_page section {
@@ -885,6 +938,9 @@ form.sign_up {
   border-bottom: 1px solid var(--whiteSmoke);
   font-size: 15px;
 }
+.my_page_recent > b {
+  font-size: 18px;
+}
 .my_page :is(.delivery_info, .setting) span {
   display: block;
   color: var(--lightGray);
@@ -918,7 +974,15 @@ form.sign_up {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--sliverGray);
+}
+.my_page .setting .twin_btn .btn_center {
+  border: 1px solid var(--dodgerBlue);
+  color: var(--dodgerBlue);
+}
+.my_page .setting .twin_btn .btn_notice {
+  background-color: var(--aliceBlue);
+  color: var(--dodgerBlue);
+  border: 1px solid transparent;
 }
 /* ########## Cart ########## */
 .cart section {
@@ -958,13 +1022,12 @@ form.sign_up {
 .cart .btn_all_clear {
   padding: 5px 10px;
 }
-.cart .cart_items {
-}
 .cart .cart_item {
   position: relative;
   display: flex;
   gap: 10px;
   padding: 20px 0;
+  padding-bottom: 60px;
   border-top: 1px solid var(--whiteSmoke);
 }
 .cart .cart_item::before {
@@ -1006,32 +1069,22 @@ form.sign_up {
   font-weight: 700;
   margin-top: 3px;
 }
-.cart .cart_item_desc .value {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  border: 1px solid var(--lightGray);
-  width: 80px;
-  height: 30px;
+.cart .cart_item_desc select {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 5px;
-}
-.cart .cart_item_desc .value span {
-}
-.cart .cart_item_desc .value :is(.minus, .plus) {
-  flex: 1;
-  transform: translateY(2px);
-  text-align: center;
-}
-.cart .cart_item_desc .value .minus {
-  padding-right: 4px;
-}
-.cart .cart_item_desc .value .plus {
-  padding-left: 4px;
+  margin-top: 10px;
+  padding: 8px 30px;
+  padding-left: 15px;
+  background: #fff url(../image/caret-down-fill.svg) no-repeat center right 10px;
+  background-size: 12px;
+  font-size: 15px;
 }
 .cart .cart_item > i {
   position: absolute;
-  top: 18px;
+  top: 15px;
   right: -5px;
   font-size: 28px;
 }
@@ -1102,14 +1155,17 @@ form.sign_up {
   font-weight: 700;
 }
 .cart .twin_btn {
-  position: absolute;
-  bottom: 50px;
+  position: fixed;
+  bottom: 0;
   left: 0;
-  width: calc(375px - 40px);
-  margin-left: 20px;
+  padding: 20px;
+  width: 100%;
   display: flex;
   gap: 10px;
   text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 .cart .twin_btn > * {
   flex: 1;
@@ -1128,8 +1184,6 @@ form.sign_up {
 /* ########## Details ##########  */
 .details section {
   padding-bottom: 15px;
-}
-.product_title {
 }
 .product_title_thum {
   width: 100%;
@@ -1280,13 +1334,64 @@ form.sign_up {
   color: #fff;
   font-size: 15px;
 }
+.details_modal_overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.details_modal_overlay.active {
+  display: block;
+}
+.details_modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.details_modal.active {
+  display: block;
+}
+.details_modal span {
+  font-size: 18px;
+}
+.details_modal .twin_btn {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.details_modal .twin_btn :is(a, button) {
+  flex: 1;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.details_modal .twin_btn a {
+  border: 1px solid var(--dodgerBlue);
+  color: var(--dodgerBlue);
+}
+.details_modal .twin_btn button {
+  border: none;
+  background-color: var(--dodgerBlue);
+  color: #fff;
+}
 /* ########## Main ########## */
 .main header h2 {
   font-weight: 400;
 }
 .main .tab_menu {
   position: fixed;
-  top: 60px;
+  top: 58px;
   left: 0;
   width: 100%;
   display: flex;
@@ -1347,8 +1452,6 @@ form.sign_up {
 .main .sitemap_item a span {
   display: inline-block;
   padding-top: 5px;
-}
-.main .banner_slider {
 }
 .main .banner_slider_item {
   width: 100%;
