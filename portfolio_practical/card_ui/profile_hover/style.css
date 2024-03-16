@@ -34,6 +34,7 @@ body {
 /* ########## Profile Card UI ########## */
 section {
   height: inherit;
+  background-color: #f4f4f4;
 }
 .card_items {
   position: absolute;

@@ -29,7 +29,7 @@ body {
   line-height: 1.5em;
   margin: 0;
   height: 100vh;
-  color: #333;
+  color: #fff;
 }
 /* ########## Profile Card ########## */
 section {
@@ -43,7 +43,8 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
-  background-color: #fff;
+  background-color: #ffffff39;
+  backdrop-filter: blur(15px);
   text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -62,9 +63,9 @@ section {
 }
 .face i {
   position: absolute;
-  bottom: 10px;
-  right: 0;
-  color: gold;
+  bottom: 5px;
+  right: -5px;
+  color: #b6d2e4;
   font-size: 20px;
   width: 22px;
   height: 22px;
@@ -74,8 +75,8 @@ section {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 .heading {
-  margin-top: 10px;
-  border-bottom: 1px solid #ddd;
+  margin-top: 20px;
+  border-bottom: 1px solid #f4f4f46e;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
@@ -84,11 +85,13 @@ section {
   display: block;
   font-size: 13px;
   font-weight: 500;
-  color: #aaa;
+  color: #ccc;
+  margin-top: 3px;
 }
 .heading p {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 10px;
+  letter-spacing: -1px;
 }
 .heading p a {
   display: block;
@@ -101,6 +104,7 @@ section {
   background-color: #a1c7df;
   color: #fff;
   transition: 0.35s;
+  margin-top: 10px;
 }
 .heading > a:hover {
   background-color: #508cb9;
@@ -146,10 +150,10 @@ section {
 .item b::before {
   content: attr(data-count);
   font-size: 16px;
-  color: #555;
+  color: #fff;
 }
 .item span {
   display: inline-block;
   font-size: 13px;
-  color: #999;
+  color: #ccc;
 }

@@ -273,6 +273,9 @@
     width: 100%;
     display: block;
   }
+  .news .heading {
+    margin-bottom: 20px;
+  }
   .news .heading h2 {
     font-size: 40px;
   }

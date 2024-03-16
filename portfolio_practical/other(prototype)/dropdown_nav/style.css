@@ -230,6 +230,7 @@ header {
   background-color: #fff;
   color: #333;
   display: none;
+  z-index: 10;
 }
 .sitemap_inner {
   width: calc(100% - 50px);
@@ -242,8 +243,6 @@ header {
 }
 .sitemap_inner .item > * {
   display: block;
-}
-.sitemap_inner .item b {
 }
 .sitemap_inner .item a:hover {
   color: #bbb;
@@ -258,6 +257,7 @@ section {
   height: calc(100vh - 140px);
   background: url(./image/english_class_background.png) no-repeat center center /
     cover;
+  z-index: -1;
 }
 section .heading {
   position: absolute;

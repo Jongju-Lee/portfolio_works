@@ -1,10 +1,11 @@
 /* Google Web Font */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap");
 /* Reset CSS */
 * {
   box-sizing: border-box;
   outline: none;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
 }
 a {
   text-decoration: none;
@@ -67,17 +68,25 @@ body {
   padding: 30px;
   letter-spacing: 1px;
 }
+.content h2 {
+  font-family: "Kurale", serif;
+  font-size: 30px;
+}
+.content p {
+  font-weight: 300;
+}
 .content a {
   display: inline-block;
   padding: 5px 15px;
   margin-top: 5px;
   border: 1px solid #fff;
-  border-radius: 40% 60% 65% 35% / 60% 45% 55% 60%;
-  transition: 0.5s;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+  transition: 0.35s;
+  font-weight: 300;
 }
 .content a:hover {
-  border: none;
-  background-color: cornflowerblue;
+  border-color: transparent;
+  background-color: #7c6a00;
 }
 /* Pebble Rotate Animation */
 @keyframes rotate {

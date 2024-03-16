@@ -195,6 +195,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
+  pointer-events: none;
 }
 .gnb {
   position: absolute;
@@ -210,6 +211,7 @@ body {
   transition: 0.35s;
   letter-spacing: 1px;
   animation: gnb 0.5s linear both;
+  pointer-events: all;
 }
 .gnb a:nth-child(1) {
   animation-delay: 0.5s;

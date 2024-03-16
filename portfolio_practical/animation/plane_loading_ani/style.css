@@ -27,8 +27,8 @@ body {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
   font-size: 30px;
-  animation: fly 1.2s linear infinite;
-  color: #b2bec3;
+  animation: fly 1.5s linear infinite;
+  color: #9eb3bc;
   z-index: 1;
 }
 .loading span {
@@ -38,7 +38,7 @@ body {
   background-color: #000;
   margin: 0 4px;
   border-radius: 50%;
-  animation: dots 1.2s linear infinite both;
+  animation: dots 1.5s linear infinite both;
 }
 .loading span:nth-child(1) {
   animation-delay: 0;
@@ -62,17 +62,6 @@ body {
 }
 
 /* loading Animation */
-@keyframes floatText {
-  0% {
-    transform: translateY(-2px);
-  }
-  50% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(-2px);
-  }
-}
 @keyframes dots {
   0% {
     opacity: 0;

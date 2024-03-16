@@ -48,6 +48,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 .sign_in img {
   display: block;
@@ -60,11 +61,10 @@ body {
   text-align: center;
 }
 .sign_in form {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .input_field {
-  position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .input_field input {
   width: 100%;
@@ -75,16 +75,14 @@ body {
   color: #fff;
   font-size: 18px;
 }
-.input_field span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: 0.5s;
+.input_field input::placeholder {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 15px;
+  transition: 0.35s;
 }
-.input_field.active span {
-  top: -20px;
-  transform-origin: left;
-  transform: scale(0.7);
+.input_field input:focus::placeholder {
+  opacity: 0;
 }
 .btn_sign_in {
   width: 100%;
@@ -94,6 +92,7 @@ body {
   border-radius: 20px;
   color: #fff;
   transition: 0.35s;
+  margin-top: 10px;
 }
 .btn_sign_in:hover {
   background-color: #3c8a29;

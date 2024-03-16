@@ -843,9 +843,16 @@ footer {
 .footer_inner .menu .links {
   margin-top: 30px;
 }
+.footer_inner .links a {
+  transition: 0.35s;
+}
+.footer_inner .links a:hover {
+  color: #999;
+}
 .introduce a {
   font-size: 16px;
   margin-right: 35px;
+  transition: 0.35s;
 }
 .policy {
   margin-top: 20px;
@@ -879,12 +886,19 @@ footer {
   padding-left: 120px;
   color: #fff;
 }
-.repair {
+.inquiry .repair {
   margin-top: 60px;
 }
-.repair a {
+.inquiry .repair a {
   font-size: 18px;
   font-weight: bold;
+  transition: 0.35s;
+}
+.inquiry .repair a:nth-child(1) {
+  margin-right: 10px;
+}
+.inquiry .repair a:hover {
+  color: #999;
 }
 .safety {
   display: inline-block;

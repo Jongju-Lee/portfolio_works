@@ -28,24 +28,22 @@ body {
   font-size: 15px;
   line-height: 1.5em;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   color: #333;
   background-color: #f9f9ff;
 }
 /* ########## FAQ Accordion ########## */
 .accordion_outer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 50%;
   margin: auto;
+  margin-top: 70px;
 }
 .accordion_outer h1 {
   text-align: center;
+  font-size: 36px;
 }
 .accordion {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 .accordion input {
   display: none;
@@ -53,21 +51,19 @@ body {
 .item {
   background-color: #fff;
   border-radius: 15px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   transition: 0.35s;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .item:not(:last-child) {
   margin-bottom: 5px;
 }
-.item:hover {
-  border: 1px solid #ee4878;
-}
 .title {
   display: block;
   padding: 20px;
   font-size: 20px;
   font-weight: 600;
+  cursor: pointer;
 }
 .title::after {
   content: "\f107";
@@ -105,4 +101,14 @@ input[id="faq5"]:checked ~ .item .title[for="faq5"]::after,
 input[id="faq6"]:checked ~ .item .title[for="faq6"]::after,
 input[id="faq7"]:checked ~ .item .title[for="faq7"]::after {
   transform: rotate(180deg);
+}
+.item:hover,
+input[id="faq1"]:checked ~ .item_first,
+input[id="faq2"]:checked ~ .item_second,
+input[id="faq3"]:checked ~ .item_third,
+input[id="faq4"]:checked ~ .item_fourth,
+input[id="faq5"]:checked ~ .item_fifth,
+input[id="faq6"]:checked ~ .item_sixth,
+input[id="faq7"]:checked ~ .item_seventh {
+  border: 2px solid #ee48778a;
 }

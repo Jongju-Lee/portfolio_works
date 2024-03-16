@@ -52,8 +52,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.gnb li {
-}
 .gnb li a {
   position: relative;
   font-size: 60px;

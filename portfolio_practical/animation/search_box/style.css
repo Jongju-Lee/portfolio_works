@@ -11,14 +11,11 @@ body {
   margin: 0;
   height: 100vh;
   background-color: #f39c12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* ##### Search Box ##### */
-.search_box_outer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 input[id="search"] {
   display: none;
 }
@@ -30,16 +27,17 @@ input[id="search"] {
   border-radius: 30px;
 }
 .search_box input {
-  width: 380px;
+  /* width: 380px; */
+  width: 60px;
+  opacity: 0;
   height: 100%;
-  padding-left: 20px;
+  padding-left: 30px;
   border-radius: 30px;
   outline: none;
   border: none;
   font-size: 18px;
   transition: 0.5s;
-  color: #333;
-  opacity: 1;
+  color: #777;
 }
 .search_box input::placeholder {
   color: #999;
@@ -59,31 +57,55 @@ input[id="search"] {
   background-color: #f39c12;
   color: #fff;
   font-size: 22px;
-  border-radius: 0 30px 30px 0;
+  border-radius: 30px;
   transition: 0.5s;
   cursor: pointer;
 }
-/* Checked Function */
-input[id="search"]:checked + .search_box {
-  animation: upDown 1.2s linear infinite both;
-  animation-delay: 0.5s;
+.search_box .icon i {
+  display: inline-block;
 }
+.click_me {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #fff;
+  opacity: 1;
+  transition: 0.35s;
+}
+.click_me::after {
+  content: "\F148";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: upDown 1.2s linear infinite both;
+}
+/* Checked Function */
 input[id="search"]:checked + .search_box input {
-  width: 60px;
-  opacity: 0;
+  width: 380px;
+  opacity: 1;
 }
 input[id="search"]:checked + .search_box .icon {
-  border-radius: 30px;
+  border-radius: 0 30px 30px 0;
+}
+input[id="search"]:checked + .search_box .icon i {
+  transform: translateX(-3px);
+}
+input[id="search"]:checked ~ .click_me {
+  opacity: 0;
 }
 /* Icon Animation */
 @keyframes upDown {
   0% {
-    transform: translateY(0px);
+    transform: translateX(-50%) translateY(0px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateX(-50%) translateY(-5px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateX(-50%) translateY(0px);
   }
 }

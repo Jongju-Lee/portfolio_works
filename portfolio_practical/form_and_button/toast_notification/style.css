@@ -30,7 +30,7 @@ body {
 }
 .notice h2 {
   display: inline-block;
-  /* letter-spacing: 1px; */
+  letter-spacing: 1px;
 }
 .notice button {
   background-color: #ea34e7;
@@ -113,7 +113,6 @@ input[id="close"] {
   display: inline-block;
   background-color: #36c9eb;
   width: 100%;
-  padding: 5px;
   text-align: center;
   border-radius: 5px;
   transition: 0.35s;
@@ -122,10 +121,15 @@ input[id="close"] {
   font-size: 18px;
   color: #fff;
 }
+.desc a label {
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+}
 .desc a:hover {
   background-color: #6564e6;
 }
-label[for="close"] {
+.btn_close {
   position: absolute;
   top: 0px;
   right: 8px;
@@ -134,7 +138,7 @@ label[for="close"] {
   color: #999;
   transition: 0.35s;
 }
-label[for="close"]:hover {
+.btn_close:hover {
   color: #000;
 }
 /* Close Button Checked Function */

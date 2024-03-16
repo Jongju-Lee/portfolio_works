@@ -12,7 +12,7 @@ body {
 /* ##### Star Rating ##### */
 .container {
   height: inherit;
-  background-color: #fff;
+  background-color: #f4f4f4;
 }
 .center {
   position: absolute;

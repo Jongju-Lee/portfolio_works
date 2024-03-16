@@ -51,7 +51,6 @@ input[id="share"] {
   font-size: 20px;
   opacity: 1;
   transition: 0.35s;
-  animation: upDown 1s linear infinite;
 }
 .tooltip {
   position: absolute;
@@ -131,21 +130,6 @@ label[for="share"]::before {
 label[for="share"]::after {
   content: attr(data-back);
   top: 100%;
-}
-label[for="share"]:hover::before,
-label[for="share"]:hover::after {
-  transform: scale(1.1);
-}
-@keyframes upDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 /* Share Button Checked Function */
 input[id="share"]:checked + .btn_share .tooltip {

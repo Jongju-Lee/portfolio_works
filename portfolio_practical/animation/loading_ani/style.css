@@ -34,7 +34,7 @@ h1::after {
   overflow: hidden;
   color: #32ff7e;
   border-bottom: 15px solid #32ff7e;
-  animation: loading 8s linear infinite;
+  animation: loading 5s linear infinite;
 }
 @keyframes loading {
   0% {
