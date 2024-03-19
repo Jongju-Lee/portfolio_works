@@ -138,9 +138,7 @@ body {
   font-style: normal;
   color: dodgerblue;
 }
-.last .hover_image {
-  transition: none;
-}
+.last .hover_image,
 .last:hover .hover_image {
   transition: none;
 }

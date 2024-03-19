@@ -70,8 +70,6 @@ body {
 .box.one {
   padding: 35px 5px 0 35px;
 }
-.box.one .details {
-}
 .box.one .details .topic {
   font-size: 30px;
   font-weight: 500;
@@ -125,8 +123,6 @@ body {
 }
 .box.one .btn_cart button:hover {
   transform: scale(0.95);
-}
-.box.two {
 }
 .box.two .photo_box {
   position: relative;

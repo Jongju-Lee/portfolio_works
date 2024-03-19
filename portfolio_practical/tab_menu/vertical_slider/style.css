@@ -26,7 +26,6 @@ body {
 section {
   position: relative;
   height: inherit;
-  border: 1px solid #000;
 }
 .vertical_outer {
   position: absolute;

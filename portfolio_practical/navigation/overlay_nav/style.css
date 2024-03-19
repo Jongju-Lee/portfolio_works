@@ -35,7 +35,7 @@ body {
   margin: 0;
   color: #333;
 }
-/* ##### Overlay Animation ##### */
+/* ##### Overlay Navigation ##### */
 .container {
   min-height: inherit;
   background-color: #fff;
@@ -54,6 +54,7 @@ input[id="active"] {
   background: linear-gradient(-135deg, #c850c0, #4158d8);
   border-radius: 50%;
   padding: 17px 13px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
 }
 .trigger_inner {

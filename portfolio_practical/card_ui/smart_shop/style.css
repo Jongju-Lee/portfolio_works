@@ -1,5 +1,5 @@
-/* Fontawesome 4.7 */
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/* Bootstrap Icons CDN */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 /* Google Web Fonts CDN */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap");
 /* Noonnu Korean Fonts */
@@ -57,11 +57,10 @@ section {
   text-align: center;
   font-weight: 300;
 }
-.inner h1 b {
-}
 .inner h1 em {
   font-style: normal;
   color: crimson;
+  font-weight: 700;
 }
 .items_outer {
   margin-top: 20px;
@@ -117,20 +116,6 @@ section {
   position: relative;
   margin-top: 5px;
 }
-.item .desc::after {
-  content: "\f08a";
-  font-family: "fontawesome";
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #bbb;
-  cursor: pointer;
-  transition: 0.35s;
-}
-.item.active .desc::after {
-  content: "\f004";
-  color: crimson;
-}
 .item .desc span {
   display: block;
 }
@@ -142,6 +127,10 @@ section {
   color: #bbb;
   margin-right: 3px;
 }
+.item .desc span:nth-of-type(2) {
+  font-weight: 500;
+  font-size: 16px;
+}
 .item .desc em {
   font-style: normal;
   color: #bbb;
@@ -149,4 +138,28 @@ section {
 .item .desc em::before {
   content: attr(data-count);
   margin-right: 5px;
+}
+.item .desc input {
+  display: none;
+}
+.item .desc label {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.item .desc label::before {
+  content: "\F417";
+  font-family: "bootstrap-icons";
+  color: #bbb;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+.item .desc input[id="product_first"]:checked + label::before,
+.item .desc input[id="product_second"]:checked + label::before,
+.item .desc input[id="product_third"]:checked + label::before,
+.item .desc input[id="product_fourth"]:checked + label::before,
+.item .desc input[id="product_fifth"]:checked + label::before {
+  content: "\F415";
+  color: crimson;
 }
