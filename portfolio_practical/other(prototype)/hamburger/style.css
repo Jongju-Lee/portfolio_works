@@ -12,6 +12,9 @@ body {
   background-image: linear-gradient(135deg, #667eea, #764ba2);
 }
 /* ##### Hamburger Button ##### */
+input[id="hamburger"] {
+  display: none;
+}
 .hamburger {
   position: absolute;
   top: 45%;
@@ -41,14 +44,14 @@ body {
   top: 100%;
 }
 /* Hamburger Button Active */
-.hamburger.active span:nth-child(1) {
+input[id="hamburger"]:checked + label span:nth-child(1) {
   top: 50%;
   transform: rotate(225deg);
 }
-.hamburger.active span:nth-child(2) {
+input[id="hamburger"]:checked + label span:nth-child(2) {
   opacity: 0;
 }
-.hamburger.active span:nth-child(3) {
+input[id="hamburger"]:checked + label span:nth-child(3) {
   top: 50%;
   transform: rotate(-45deg);
 }

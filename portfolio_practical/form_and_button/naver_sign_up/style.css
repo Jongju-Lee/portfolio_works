@@ -7,10 +7,17 @@
   box-sizing: border-box;
   outline: none;
   font-family: "Noto Sans KR", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 button {
   cursor: pointer;
+}
+select {
+  /* select 태그 화살표 없애기 */
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 body {
   font-size: 15px;
@@ -27,6 +34,9 @@ body {
 .logo {
   text-align: center;
 }
+.logo a img {
+  width: 200px;
+}
 /* ########## Section ########## */
 section {
   margin-top: 30px;
@@ -41,36 +51,39 @@ section {
 .input_field b {
   display: block;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 8px;
 }
 .input_field b span {
-  color: #bbb;
+  color: #999;
   font-size: 16px;
   font-weight: 400;
 }
-.input_field input {
+.input_field input,
+.birth_wrapper select {
   width: 100%;
   font-size: 16px;
   padding: 15px;
   border: 1px solid #e3e3e3;
   border-radius: 5px;
+  color: #333;
 }
 .input_field input::placeholder {
+  color: #bbb;
+  opacity: 1;
   transition: 0.35s;
-  font-weight: 300;
+  font-weight: 400;
 }
 .input_field input:focus::placeholder {
-  color: transparent;
+  opacity: 0;
 }
 .input_field.id input::placeholder {
-  color: #bbb;
   float: right;
+}
+.input_field.id input:focus::placeholder {
   opacity: 1;
 }
 /* ##### input_field - Birth ##### */
-.input_field.birth {
-}
 .birth_wrapper {
   display: flex;
   gap: 10px;
@@ -79,9 +92,9 @@ section {
   flex: 1;
 }
 .birth_wrapper select {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
+  background: #fff url(./image/caret-down-fill.svg) no-repeat center right 20px;
+  background-size: 14px;
+  color: #333;
 }
 /* ##### input_field - Gender ##### */
 .radio_field {
@@ -108,6 +121,7 @@ section {
   transform: translateY(2px);
   margin-right: 5px;
   transition: 0.35s;
+  color: #bbb;
 }
 .radio_field input[id="radio1"]:checked ~ label[for="radio1"]::before,
 .radio_field input[id="radio2"]:checked ~ label[for="radio2"]::before,
@@ -116,7 +130,11 @@ section {
   color: #2db400;
 }
 /* ##### Phone ##### */
-.phone {
+.input_field input.read_only {
+  background-color: #eee;
+}
+.input_field input.read_only:focus::placeholder {
+  opacity: 1;
 }
 .input_field.tel {
   display: flex;
